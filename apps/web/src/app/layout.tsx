@@ -64,6 +64,9 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
+        <footer className="fixed bottom-3 right-4 text-xs opacity-70 select-none">
+          © MOZUK - 2025
+        </footer>
       </body>
     </html>
   );
