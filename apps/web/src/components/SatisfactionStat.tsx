@@ -9,7 +9,7 @@ export default function SatisfactionStat() {
   const ref = useRef<HTMLDivElement | null>(null);
   const hasAnimatedRef = useRef(false);
   const revealTimeoutRef = useRef<number | null>(null);
-  const fallbackTimeoutRef = useRef<number | null>(null);
+  const [isSmall, setIsSmall] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -23,20 +23,18 @@ export default function SatisfactionStat() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.6, rootMargin: "0px 0px -20% 0px" }
     );
     observer.observe(el);
-    // Fallback: start animation if observer doesn’t trigger soon
-    fallbackTimeoutRef.current = window.setTimeout(() => {
-      if (!hasAnimatedRef.current) {
-        hasAnimatedRef.current = true;
-        animateTo100();
-      }
-    }, 800);
+    // Responsive breakpoint listener for mobile sizing
+    const mq = window.matchMedia("(max-width: 640px)");
+    const update = () => setIsSmall(mq.matches);
+    update();
+    mq.addEventListener?.("change", update);
     return () => {
       observer.disconnect();
       if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current);
-      if (fallbackTimeoutRef.current) window.clearTimeout(fallbackTimeoutRef.current);
+      mq.removeEventListener?.("change", update);
     };
   }, []);
 
@@ -61,8 +59,8 @@ export default function SatisfactionStat() {
     requestAnimationFrame(frame);
   }
 
-  const radius = 220; // smaller to fit side-by-side
-  const stroke = 24;
+  const radius = isSmall ? 140 : 220;
+  const stroke = isSmall ? 18 : 24;
   const size = radius * 2 + stroke * 2;
   const circumference = 2 * Math.PI * radius;
   const dash = (progress / 100) * circumference;

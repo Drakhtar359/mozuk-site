@@ -9,6 +9,7 @@ export default function PerformanceLineStat() {
   const hasAnimatedRef = useRef(false);
   const revealTimeoutRef = useRef<number | null>(null);
   const fallbackTimeoutRef = useRef<number | null>(null);
+  const [isSmall, setIsSmall] = useState(false);
 
   useEffect(() => {
     const el = rootRef.current;
@@ -22,20 +23,19 @@ export default function PerformanceLineStat() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.6, rootMargin: "0px 0px -20% 0px" }
     );
     observer.observe(el);
-    // Fallback: start animation shortly after mount if observer never fires
-    fallbackTimeoutRef.current = window.setTimeout(() => {
-      if (!hasAnimatedRef.current) {
-        hasAnimatedRef.current = true;
-        animate();
-      }
-    }, 800);
+    // Responsive watcher for mobile sizing
+    const mq = window.matchMedia("(max-width: 640px)");
+    const update = () => setIsSmall(mq.matches);
+    update();
+    mq.addEventListener?.("change", update);
     return () => {
       observer.disconnect();
       if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current);
       if (fallbackTimeoutRef.current) window.clearTimeout(fallbackTimeoutRef.current);
+      mq.removeEventListener?.("change", update);
     };
   }, []);
 
@@ -59,9 +59,9 @@ export default function PerformanceLineStat() {
     requestAnimationFrame(frame);
   }
 
-  const width = 480; // shrink to fit side-by-side
-  const height = 480;
-  const pad = 48;
+  const width = isSmall ? 300 : 480;
+  const height = isSmall ? 300 : 480;
+  const pad = isSmall ? 32 : 48;
   const x0 = pad;
   const y0 = height - pad;
   const x1 = width - pad;

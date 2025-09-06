@@ -17,7 +17,7 @@ export default function Home() {
       </section>
 
       <section className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12 items-start">
           <SatisfactionStat />
           <PerformanceLineStat />
         </div>
