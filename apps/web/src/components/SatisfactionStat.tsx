@@ -88,7 +88,11 @@ export default function SatisfactionStat() {
                 <span className="text-[var(--brand)] font-extrabold">100%</span> satisfied customers
               </div>
               <div className="h-3" />
-              <div className="whitespace-nowrap text-xs sm:text-sm opacity-70">Projects delivered with measurable impact and lasting partnerships.</div>
+              <div className="text-xs sm:text-sm opacity-70">
+                <span>Projects delivered with measurable impact</span>
+                <br />
+                <span>and lasting partnerships.</span>
+              </div>
             </div>
           </div>
         </div>
