@@ -45,9 +45,11 @@ export default function RootLayout({
             <Link href="/" className="flex items-center gap-2">
               <div className="relative h-8 w-8">
                 <img
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="MOZUK logo"
                   className="absolute inset-0 h-full w-full object-contain"
+                  width={32}
+                  height={32}
                 />
               </div>
               <span className="text-[18px] font-semibold tracking-wide">

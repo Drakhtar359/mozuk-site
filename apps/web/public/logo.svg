@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="MOZUK logo">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13d1c2"/>
+      <stop offset="100%" stop-color="#04a89a"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#g)"/>
+  <g fill="#ffffff" stroke="none" transform="translate(44,60)">
+    <!-- Stylized M letter -->
+    <path d="M0 136V0h32l52 76 52-76h32v136h-32V52l-52 76-52-76v84z"/>
+  </g>
+  <title>MOZUK</title>
+</svg>
+
