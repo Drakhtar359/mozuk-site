@@ -6,8 +6,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Lock site to dark theme across all devices */
+  --background: #0a0a0a;
+  --foreground: #ededed;
   --brand: #04a89a;
 }
 
@@ -18,17 +19,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Remove OS color-scheme auto switching; force dark */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  color-scheme: dark;
 }
 @import "tailwindcss";
 
