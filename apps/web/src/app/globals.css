@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Ensure base Tailwind layers are included for preflight and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
