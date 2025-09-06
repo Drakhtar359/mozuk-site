@@ -59,9 +59,9 @@ export default function PerformanceLineStat() {
     requestAnimationFrame(frame);
   }
 
-  const width = 548;
-  const height = 548;
-  const pad = 56;
+  const width = 480; // shrink to fit side-by-side
+  const height = 480;
+  const pad = 48;
   const x0 = pad;
   const y0 = height - pad;
   const x1 = width - pad;

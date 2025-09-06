@@ -61,7 +61,7 @@ export default function SatisfactionStat() {
     requestAnimationFrame(frame);
   }
 
-  const radius = 250;
+  const radius = 220; // smaller to fit side-by-side
   const stroke = 24;
   const size = radius * 2 + stroke * 2;
   const circumference = 2 * Math.PI * radius;
