@@ -1,0 +1,15 @@
+{
+  "name": "mozuk-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MOZUK monorepo",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/web",
+    "build": "npm run build -w apps/web",
+    "start": "npm run start -w apps/web"
+  }
+}
+

@@ -1,0 +1,16 @@
+node_modules/
+.next/
+apps/web/node_modules/
+apps/web/.next/
+.turbo/
+apps/web/.turbo/
+.vercel/
+dist/
+build/
+.DS_Store
+npm-debug.log*
+yarn-*.log*
+.env*
+.vscode/
+.idea/
+coverage/
