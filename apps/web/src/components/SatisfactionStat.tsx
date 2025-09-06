@@ -9,6 +9,7 @@ export default function SatisfactionStat() {
   const ref = useRef<HTMLDivElement | null>(null);
   const hasAnimatedRef = useRef(false);
   const revealTimeoutRef = useRef<number | null>(null);
+  const fallbackTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -22,12 +23,20 @@ export default function SatisfactionStat() {
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     );
     observer.observe(el);
+    // Fallback: start animation if observer doesn’t trigger soon
+    fallbackTimeoutRef.current = window.setTimeout(() => {
+      if (!hasAnimatedRef.current) {
+        hasAnimatedRef.current = true;
+        animateTo100();
+      }
+    }, 800);
     return () => {
       observer.disconnect();
       if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current);
+      if (fallbackTimeoutRef.current) window.clearTimeout(fallbackTimeoutRef.current);
     };
   }, []);
 

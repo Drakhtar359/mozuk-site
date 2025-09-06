@@ -8,6 +8,7 @@ export default function PerformanceLineStat() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const hasAnimatedRef = useRef(false);
   const revealTimeoutRef = useRef<number | null>(null);
+  const fallbackTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const el = rootRef.current;
@@ -21,12 +22,20 @@ export default function PerformanceLineStat() {
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     );
     observer.observe(el);
+    // Fallback: start animation shortly after mount if observer never fires
+    fallbackTimeoutRef.current = window.setTimeout(() => {
+      if (!hasAnimatedRef.current) {
+        hasAnimatedRef.current = true;
+        animate();
+      }
+    }, 800);
     return () => {
       observer.disconnect();
       if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current);
+      if (fallbackTimeoutRef.current) window.clearTimeout(fallbackTimeoutRef.current);
     };
   }, []);
 
