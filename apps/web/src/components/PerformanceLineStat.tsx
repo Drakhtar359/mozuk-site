@@ -108,7 +108,7 @@ export default function PerformanceLineStat() {
         <line x1={x0} y1={y0} x2={x1} y2={y0} stroke="white" strokeWidth={2} />
         <line x1={x0} y1={y0} x2={x0} y2={pad} stroke="white" strokeWidth={2} />
       </svg>
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+      <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
         <div className="relative">
           <div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-900 ease-in-out ${showText ? "opacity-0" : "opacity-100"}`} aria-hidden={showText}>
             <div className="text-3xl sm:text-5xl font-extrabold">{Math.round(value)}%</div>

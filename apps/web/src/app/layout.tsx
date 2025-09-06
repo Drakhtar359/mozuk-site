@@ -40,7 +40,7 @@ export default function RootLayout({
           <HeroBackground />
         </div>
         <ScrollReset />
-        <header className="sticky top-0 z-40 border-b border-black/10 dark:border-white/10 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <header className="sticky top-0 z-40 border-b border-black/10 dark:border-white/10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
           <nav className="mx-auto max-w-6xl w-full flex items-center justify-between px-5 py-3">
             <Link href="/" className="flex items-center gap-2">
               <div className="relative h-8 w-8">
@@ -56,7 +56,7 @@ export default function RootLayout({
             </Link>
             <div className="hidden sm:flex items-center gap-6 text-sm">
               <a href="#services" className="hover:text-[var(--brand)] transition-colors">Services</a>
-              <a href="#contact" className="hover:text-[var(--brand)] transition-colors">Contact</a>
+              <a href="#contact" className="hover:text-[var(--brand)] transition-colors">Contact us</a>
             </div>
             <div className="sm:hidden" />
           </nav>

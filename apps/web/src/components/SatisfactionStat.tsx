@@ -79,7 +79,7 @@ export default function SatisfactionStat() {
         <circle cx={size / 2} cy={size / 2} r={radius} stroke="currentColor" strokeWidth={stroke} className="opacity-15" fill="none" />
         <circle cx={size / 2} cy={size / 2} r={radius} stroke="url(#satisfyGradient)" strokeWidth={stroke} strokeLinecap="round" strokeDasharray={`${dash} ${circumference}`} transform={`rotate(-90 ${size / 2} ${size / 2})`} fill="none" />
       </svg>
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+      <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
         <div className="relative">
           <div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-900 ease-in-out ${showText ? "opacity-0" : "opacity-100"}`} aria-hidden={showText}>
             <div className="text-3xl sm:text-5xl font-extrabold">{display}%</div>
