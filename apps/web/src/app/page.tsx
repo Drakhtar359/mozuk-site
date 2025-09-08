@@ -39,13 +39,14 @@ export default function Home() {
       </section>
 
       <section id="contact" className="py-20 border-t border-black/10 dark:border-white/10">
-        <div className="rounded-2xl p-8 sm:p-10 bg-black text-white dark:bg-white dark:text-black">
-          <h3 className="text-2xl font-semibold">Let’s collaborate</h3>
+        <h2 className="text-2xl font-semibold mb-6">Contact us</h2>
+        <div className="rounded-2xl p-8 sm:p-10 border border-black/10 dark:border-white/10 bg-background">
+          <h3 className="text-2xl font-semibold">Let's collaborate</h3>
           <p className="mt-3 text-sm/6 opacity-80 max-w-prose">
-            Tell us about your goals. We’ll reply within 1 business day.
+            Tell us about your goals. We'll reply within 1 business day.
           </p>
-          <a href="mailto:hello@mozuk.co" className="mt-6 inline-flex items-center rounded-md bg-[var(--brand)] text-white px-5 py-3 text-sm font-medium shadow-sm hover:opacity-90 transition">
-            hello@mozuk.co
+          <a href="/mozuk-form" className="mt-6 inline-flex items-center rounded-md bg-[var(--brand)] text-white px-5 py-3 text-sm font-medium shadow-sm hover:opacity-90 transition">
+            Get started
           </a>
         </div>
       </section>
