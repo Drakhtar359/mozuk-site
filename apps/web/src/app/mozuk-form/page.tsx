@@ -8,10 +8,10 @@ export default function MozukForm() {
   const [stage, setStage] = useState<string>("");
   const services = useMemo(
     () => [
-      { key: "pitch", label: "Pitch Decks (Investor-ready presentations)" },
-      { key: "roadmaps", label: "Roadmaps (Strategic product timelines)" },
-      { key: "docs", label: "Product Documentation (Datasheets & catalogs)" },
-      { key: "analytics", label: "Data Analysis (Turning numbers into insights)" },
+      { key: "pitch", label: "Pitch Decks", sublabel: "(Investor-ready presentations)" },
+      { key: "roadmaps", label: "Roadmaps", sublabel: "(Strategic product timelines)" },
+      { key: "docs", label: "Product Documentation", sublabel: "(Datasheets & catalogs)" },
+      { key: "analytics", label: "Data Analysis", sublabel: "(Turning numbers into insights)" },
       { key: "other", label: "Other" },
     ],
     []
@@ -63,7 +63,7 @@ export default function MozukForm() {
           <input
             type="text"
             name="company"
-            placeholder="Mozuk Inc., Optional"
+                  placeholder="Mozuk Inc."
             className="rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
           />
         </label>
@@ -94,7 +94,9 @@ export default function MozukForm() {
                   }}
                   className="mt-0.5 h-4 w-4 rounded border-black/20 dark:border-white/20 text-[var(--brand)] focus:ring-[var(--brand)] transition"
                 />
-                <span className="text-sm/6 opacity-90">{s.label}</span>
+                <span className="text-sm/6 opacity-90">
+                  {s.label} {s.sublabel && <span className="opacity-60">{s.sublabel}</span>}
+                </span>
               </label>
             ))}
           </div>
