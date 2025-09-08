@@ -7,7 +7,7 @@ export default function Home() {
     <main className="mx-auto max-w-6xl px-5">
       <section className="relative min-h-[100svh] flex flex-col justify-center py-12 sm:py-16">
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
-          Build pitch and ship with
+          Build, pitch and ship with
           <span className="text-[var(--brand)]"> MOZUK</span>.
         </h1>
         <p className="mt-5 text-base sm:text-lg text-black/70 dark:text-white/70 max-w-2xl text-center mx-auto">
