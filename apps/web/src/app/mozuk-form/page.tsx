@@ -151,7 +151,7 @@ export default function MozukForm() {
           type="submit"
           className="mt-2 inline-flex items-center justify-center rounded-md bg-[var(--brand)] px-5 py-2.5 text-white font-medium shadow-sm transition duration-200 hover:opacity-95 hover:scale-[1.01] active:scale-[0.99]"
         >
-          Connect the Dots 🚀
+          Connect the Dots
         </button>
 
         {sent && (
