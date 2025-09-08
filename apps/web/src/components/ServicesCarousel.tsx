@@ -77,7 +77,7 @@ function chunkIntoPages<T>(items: T[], size: number): T[][] {
 function ServiceCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-2xl border border-black/10 dark:border-white/10 p-6 sm:p-8 hover:shadow-sm transition bg-background">
-      <h3 className="text-xl sm:text-2xl font-semibold tracking-tight">{title}</h3>
+      <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)]">{title}</h3>
       <p className="mt-2 text-sm sm:text-base text-black/70 dark:text-white/70">{description}</p>
     </div>
   );
