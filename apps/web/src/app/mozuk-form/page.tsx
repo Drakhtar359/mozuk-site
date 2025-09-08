@@ -7,9 +7,11 @@ export default function MozukForm() {
 
   return (
     <main className="mx-auto max-w-2xl px-5 py-16">
-      <h1 className="text-3xl sm:text-5xl font-bold">MOZUK form</h1>
-      <p className="mt-3 text-sm/6 opacity-80">
-        Share a few details and we’ll get back to you.
+      <h1 className="text-center text-3xl sm:text-5xl font-bold">
+        MOZ<span className="text-[var(--brand)]">U</span>K
+      </h1>
+      <p className="mt-3 text-center text-sm/6 opacity-80">
+        Connecting dots that <span className="text-[var(--brand)] font-semibold">Matter</span>.
       </p>
 
       <form
