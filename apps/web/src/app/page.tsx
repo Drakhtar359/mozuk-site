@@ -33,7 +33,7 @@ export default function Home() {
               { title: "Data Analysis", description: "Insights that drive confident decisions." },
               { title: "Product Documentation", description: "Docs that onboard and empower users." },
             ]}
-            autoMs={3000}
+            autoMs={5000}
           />
         </div>
       </section>

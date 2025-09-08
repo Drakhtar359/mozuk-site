@@ -41,7 +41,7 @@ export default function ServicesCarousel({ services, autoMs = 3000 }: ServicesCa
         setPageIndex(0);
         // Re-enable transition on the next frame
         requestAnimationFrame(() => setInstant(false));
-      }, 720);
+      }, 1000);
       return () => window.clearTimeout(timeout);
     }
   }, [pageIndex, numPages]);
@@ -49,7 +49,7 @@ export default function ServicesCarousel({ services, autoMs = 3000 }: ServicesCa
   return (
     <div className="relative overflow-hidden">
       <div
-        className={`flex ease-in-out ${instant ? '' : 'transition-transform duration-700'}`}
+        className={`flex ease-in-out ${instant ? '' : 'transition-transform duration-1000'}`}
         style={{ width: `${length * 100}%`, transform: `translateX(-${pageIndex * (100 / length)}%)` }}
       >
         {rendered.map((pair, pageIdx) => (
