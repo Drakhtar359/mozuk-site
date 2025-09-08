@@ -7,20 +7,13 @@ export default function Home() {
     <main className="mx-auto max-w-6xl px-5">
       <section className="relative min-h-[100svh] flex flex-col justify-center py-12 sm:py-16">
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
-          Build, pitch, and ship with
+          Build pitch and ship with
           <span className="text-[var(--brand)]"> MOZUK</span>.
         </h1>
         <p className="mt-5 text-base sm:text-lg text-black/70 dark:text-white/70 max-w-2xl text-center mx-auto">
           We partner with teams to craft standout pitch decks, sharpen product strategy,
           analyze data for insight, and document products your users love.
         </p>
-      </section>
-
-      <section className="py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12 items-start">
-          <SatisfactionStat />
-          <PerformanceLineStat />
-        </div>
       </section>
 
       <section id="services" className="py-14 border-t border-black/10 dark:border-white/10">
@@ -35,6 +28,13 @@ export default function Home() {
             ]}
             autoMs={5000}
           />
+        </div>
+      </section>
+
+      <section className="py-16 border-t border-black/10 dark:border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12 items-start">
+          <SatisfactionStat />
+          <PerformanceLineStat />
         </div>
       </section>
 
