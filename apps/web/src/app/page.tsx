@@ -149,9 +149,8 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <div className="text-white">
-                info<span className="text-[var(--brand)]">@</span>mozuk<span className="text-[var(--brand)]">.</span>net
-              </div>
+              <div className="text-[var(--brand)] font-medium">Email</div>
+              <div className="text-white text-sm opacity-80">info@mozuk.net</div>
             </div>
           </div>
         </div>
