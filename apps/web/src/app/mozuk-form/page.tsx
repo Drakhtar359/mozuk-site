@@ -35,7 +35,7 @@ export default function MozukForm() {
       >
         {/* Name */}
         <label className="grid gap-2">
-          <span className="text-xs opacity-70">Name</span>
+          <span className="text-xs text-[var(--brand)]">Name</span>
           <input
             type="text"
             name="name"
@@ -47,7 +47,7 @@ export default function MozukForm() {
 
         {/* Email */}
         <label className="grid gap-2">
-          <span className="text-xs opacity-70">Email</span>
+          <span className="text-xs text-[var(--brand)]">Email</span>
           <input
             type="email"
             name="email"
@@ -59,7 +59,7 @@ export default function MozukForm() {
 
         {/* Company */}
         <label className="grid gap-2">
-          <span className="text-xs opacity-70">Company / Startup name</span>
+          <span className="text-xs text-[var(--brand)]">Company / Startup name</span>
           <input
             type="text"
             name="company"
@@ -70,7 +70,7 @@ export default function MozukForm() {
 
         {/* Industry */}
         <label className="grid gap-2">
-          <span className="text-xs opacity-70">Industry</span>
+          <span className="text-xs text-[var(--brand)]">Industry</span>
           <input
             type="text"
             name="industry"
@@ -81,7 +81,7 @@ export default function MozukForm() {
 
         {/* Services */}
         <fieldset className="grid gap-3">
-          <legend className="text-xs opacity-70">Service you’re interested in</legend>
+          <legend className="text-xs text-[var(--brand)] mb-3 sm:mb-4">Service you’re interested in</legend>
           <div className="grid gap-2">
             {services.map((s) => (
               <label key={s.key} className="inline-flex items-start gap-3 cursor-pointer">
@@ -110,7 +110,7 @@ export default function MozukForm() {
 
         {/* Stage */}
         <fieldset className="grid gap-3">
-          <legend className="text-xs opacity-70">Project stage</legend>
+          <legend className="text-xs text-[var(--brand)] mb-3 sm:mb-4">Project stage</legend>
           <div className="grid gap-2">
             {[
               { key: "idea", label: "Idea Stage (Still shaping the concept)" },
@@ -134,7 +134,7 @@ export default function MozukForm() {
 
         {/* Message */}
         <label className="grid gap-2">
-          <span className="text-xs opacity-70">Message / Details</span>
+          <span className="text-xs text-[var(--brand)]">Message / Details</span>
           <textarea
             name="message"
             rows={6}
