@@ -1,42 +1,84 @@
 export default function BusinessCard() {
+  const contactInfo = {
+    name: "Michel Akl",
+    title: "Founder & CEO",
+    lebanon: "+961 78 847 997",
+    bulgaria: "+359 87 7282470",
+    email: "michel.akl@mozuk.net"
+  };
+
+  const addToContacts = () => {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${contactInfo.name}
+TITLE:${contactInfo.title}
+TEL:${contactInfo.lebanon}
+TEL:${contactInfo.bulgaria}
+EMAIL:${contactInfo.email}
+ORG:MOZUK
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Michel Akl - MOZUK.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="fixed inset-0 overflow-hidden">
       <main className="h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="bg-background/80 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-3xl p-6 sm:p-8 lg:p-12 max-w-6xl w-full mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
+        <div className="bg-background/80 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl p-8 max-w-4xl w-full mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Image on the left */}
             <div className="flex-shrink-0">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden shadow-lg">
+              <div className="w-48 h-48 rounded-lg overflow-hidden">
                 <img 
                   src="/business-card-image.JPG" 
-                  alt="MOZUK Business Card" 
+                  alt="Michel Akl - MOZUK" 
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
             
             {/* Text on the right */}
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-                MOZ<span className="text-[var(--brand)]">U</span>K
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-white">{contactInfo.name}</span>
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl text-black/70 dark:text-white/70 mb-6 sm:mb-8 font-medium">
-                Build, pitch and ship with MOZUK.
+              <p className="text-lg text-[var(--brand)] mb-6 font-medium">
+                {contactInfo.title}
               </p>
-              <div className="space-y-3 sm:space-y-4 text-base sm:text-lg lg:text-xl text-black/60 dark:text-white/60">
-                <p className="flex items-center justify-center lg:justify-start gap-2">
-                  <span className="text-[var(--brand)]">🇱🇧</span>
-                  Lebanon: +961 7884 7997
-                </p>
-                <p className="flex items-center justify-center lg:justify-start gap-2">
-                  <span className="text-[var(--brand)]">🇧🇬</span>
-                  Bulgaria: +359 87 7282470
-                </p>
-                <p className="flex items-center justify-center lg:justify-start gap-2">
-                  <span className="text-[var(--brand)]">✉️</span>
-                  info@mozuk.net
-                </p>
+              
+              <div className="space-y-2 text-sm text-white/80">
+                <div>
+                  <p className="text-white">Lebanon</p>
+                  <p className="text-[var(--brand)]">{contactInfo.lebanon}</p>
+                </div>
+                <div>
+                  <p className="text-white">Bulgaria</p>
+                  <p className="text-[var(--brand)]">{contactInfo.bulgaria}</p>
+                </div>
+                <div>
+                  <p className="text-white">Email</p>
+                  <p className="text-[var(--brand)]">{contactInfo.email}</p>
+                </div>
               </div>
+
+              {/* Mobile Contact Button */}
+              <button
+                onClick={addToContacts}
+                className="mt-6 inline-flex items-center justify-center rounded-md bg-[var(--brand)] text-white px-6 py-3 text-sm font-medium shadow-sm hover:opacity-90 transition md:hidden"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+                Add to Contacts
+              </button>
             </div>
           </div>
         </div>
@@ -44,3 +86,4 @@ export default function BusinessCard() {
     </div>
   );
 }
+
