@@ -49,8 +49,6 @@ export default function Navigation() {
           />
         </svg>
       </Link>
-      
-      <div className="sm:hidden" />
     </nav>
   );
 }
