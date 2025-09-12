@@ -51,24 +51,24 @@ END:VCARD`;
             
             {/* Text on the right */}
             <div className="flex-1 text-center md:text-left w-full md:w-auto">
-              <h1 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] font-bold mb-2">
+              <h1 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] font-bold mb-1">
                 <span className="text-black dark:text-white">{contactInfo.name}</span>
               </h1>
-              <p className="text-[4vw] sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2vw] text-[var(--brand)] mb-4 sm:mb-6 font-medium">
+              <p className="text-[4vw] sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2vw] text-[var(--brand)] mb-2 sm:mb-3 font-medium">
                 {contactInfo.title}
               </p>
               
               <div className="space-y-2 sm:space-y-3 text-[3vw] sm:text-[2.5vw] md:text-[1.5vw] lg:text-[1.2vw]">
                 <div>
-                  <p className="text-black dark:text-white">Lebanon</p>
+                  <p className="text-black dark:text-white uppercase">LEBANON</p>
                   <p className="text-[var(--brand)]">{contactInfo.lebanon}</p>
                 </div>
                 <div>
-                  <p className="text-black dark:text-white">Bulgaria</p>
+                  <p className="text-black dark:text-white uppercase">BULGARIA</p>
                   <p className="text-[var(--brand)]">{contactInfo.bulgaria}</p>
                 </div>
                 <div>
-                  <p className="text-black dark:text-white">Email</p>
+                  <p className="text-black dark:text-white uppercase">EMAIL</p>
                   <p className="text-[var(--brand)]">{contactInfo.email}</p>
                 </div>
               </div>
