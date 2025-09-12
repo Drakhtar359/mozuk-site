@@ -6,8 +6,12 @@ export default function BusinessCard() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Image on the left */}
             <div className="flex-shrink-0">
-              <div className="w-48 h-48 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 text-sm">Your Image Here</span>
+              <div className="w-48 h-48 rounded-lg overflow-hidden">
+                <img 
+                  src="/business-card-image.jpg" 
+                  alt="MOZUK Business Card" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             
