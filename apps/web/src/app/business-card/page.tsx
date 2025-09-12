@@ -35,12 +35,12 @@ END:VCARD`;
 
   return (
     <div className="fixed inset-0 overflow-hidden touch-none">
-      <main className="h-screen w-screen flex items-center justify-center px-3 sm:px-6 lg:px-8">
-        <div className="bg-background/80 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 max-w-4xl w-full mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
+      <main className="h-screen w-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="bg-background/80 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl p-6 sm:p-8 lg:p-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[70%] max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
             {/* Image on the left */}
             <div className="flex-shrink-0">
-              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg overflow-hidden">
+              <div className="w-[40vw] h-[40vw] sm:w-[35vw] sm:h-[35vw] md:w-[25vw] md:h-[25vw] lg:w-[20vw] lg:h-[20vw] max-w-80 max-h-80 rounded-lg overflow-hidden">
                 <img 
                   src="/business-card-image.jpg" 
                   alt="Michel Akl - MOZUK" 
@@ -50,15 +50,15 @@ END:VCARD`;
             </div>
             
             {/* Text on the right */}
-            <div className="flex-1 text-center md:text-left max-w-[128px] sm:max-w-[160px] md:max-w-[192px]">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1">
-                <span className="text-white dark:text-white">{contactInfo.name}</span>
+            <div className="flex-1 text-center md:text-left w-full md:w-auto">
+              <h1 className="text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] font-bold mb-2">
+                <span className="text-black dark:text-white">{contactInfo.name}</span>
               </h1>
-              <p className="text-base sm:text-lg text-[var(--brand)] mb-3 sm:mb-4 font-medium">
+              <p className="text-[4vw] sm:text-[3.5vw] md:text-[2.5vw] lg:text-[2vw] text-[var(--brand)] mb-4 sm:mb-6 font-medium">
                 {contactInfo.title}
               </p>
               
-              <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
+              <div className="space-y-2 sm:space-y-3 text-[3vw] sm:text-[2.5vw] md:text-[1.5vw] lg:text-[1.2vw]">
                 <div>
                   <p className="text-black dark:text-white">Lebanon</p>
                   <p className="text-[var(--brand)]">{contactInfo.lebanon}</p>
@@ -76,9 +76,9 @@ END:VCARD`;
               {/* Mobile Contact Button */}
               <button
                 onClick={addToContacts}
-                className="mt-4 sm:mt-6 inline-flex items-center justify-center rounded-md bg-[var(--brand)] text-white px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-sm hover:opacity-90 transition md:hidden"
+                className="mt-6 sm:mt-8 inline-flex items-center justify-center rounded-md bg-[var(--brand)] text-white px-6 py-3 sm:px-8 sm:py-4 text-[3vw] sm:text-[2.5vw] md:text-[1.5vw] lg:text-[1.2vw] font-medium shadow-sm hover:opacity-90 transition md:hidden"
               >
-                <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-[4vw] h-[4vw] sm:w-[3vw] sm:h-[3vw] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
                 Add to Contacts
