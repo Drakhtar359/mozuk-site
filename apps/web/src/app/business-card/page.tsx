@@ -25,7 +25,7 @@ END:VCARD`;
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Michel Akl - MOZUK.vcf';
+    link.download = 'Michel Akl.vcf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -51,23 +51,23 @@ END:VCARD`;
             {/* Text on the right */}
             <div className="flex-1 text-center md:text-left max-w-[192px]">
               <h1 className="text-3xl md:text-4xl font-bold mb-1">
-                <span className="text-white">{contactInfo.name}</span>
+                <span className="text-white dark:text-white">{contactInfo.name}</span>
               </h1>
               <p className="text-lg text-[var(--brand)] mb-4 font-medium">
                 {contactInfo.title}
               </p>
               
-              <div className="space-y-2 text-sm text-white/80">
+              <div className="space-y-2 text-sm">
                 <div>
-                  <p className="text-white">Lebanon</p>
+                  <p className="text-black dark:text-white">Lebanon</p>
                   <p className="text-[var(--brand)]">{contactInfo.lebanon}</p>
                 </div>
                 <div>
-                  <p className="text-white">Bulgaria</p>
+                  <p className="text-black dark:text-white">Bulgaria</p>
                   <p className="text-[var(--brand)]">{contactInfo.bulgaria}</p>
                 </div>
                 <div>
-                  <p className="text-white">Email</p>
+                  <p className="text-black dark:text-white">Email</p>
                   <p className="text-[var(--brand)]">{contactInfo.email}</p>
                 </div>
               </div>
