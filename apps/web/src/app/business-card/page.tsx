@@ -1,3 +1,5 @@
+"use client";
+
 export default function BusinessCard() {
   // Business card component with contact information
   const contactInfo = {
