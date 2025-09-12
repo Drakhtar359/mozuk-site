@@ -1,4 +1,5 @@
 export default function BusinessCard() {
+  // Business card component with contact information
   const contactInfo = {
     name: "Michel Akl",
     title: "Founder & CEO",
