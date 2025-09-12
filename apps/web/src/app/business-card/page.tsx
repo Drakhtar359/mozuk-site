@@ -14,6 +14,7 @@ export default function BusinessCard() {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${contactInfo.name}
+N:${contactInfo.name.split(' ')[1]};${contactInfo.name.split(' ')[0]};;;
 TITLE:${contactInfo.title}
 TEL:${contactInfo.lebanon}
 TEL:${contactInfo.bulgaria}
