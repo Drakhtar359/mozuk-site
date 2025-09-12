@@ -41,7 +41,7 @@ END:VCARD`;
             <div className="flex-shrink-0">
               <div className="w-48 h-48 rounded-lg overflow-hidden">
                 <img 
-                  src="/business-card-image.JPG" 
+                  src="/business-card-image.jpg" 
                   alt="Michel Akl - MOZUK" 
                   className="w-full h-full object-cover"
                 />
