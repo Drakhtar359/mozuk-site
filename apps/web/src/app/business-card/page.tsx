@@ -49,8 +49,8 @@ END:VCARD`;
             </div>
             
             {/* Text on the right */}
-            <div className="flex-1 text-center md:text-left max-w-[192px] md:max-w-none">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+            <div className="flex-1 text-center md:text-left max-w-[192px]">
+              <h1 className="text-3xl md:text-4xl font-bold mb-1">
                 <span className="text-white">{contactInfo.name}</span>
               </h1>
               <p className="text-lg text-[var(--brand)] mb-4 font-medium">
