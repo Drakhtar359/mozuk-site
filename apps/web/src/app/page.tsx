@@ -84,7 +84,7 @@ export default function Home() {
             </div>
             <div>
               <div className="text-[var(--brand)] font-medium">Lebanon</div>
-              <div className="text-white text-sm opacity-80">+961 7884 7997</div>
+              <div className="text-black dark:text-white text-sm opacity-80">+961 7884 7997</div>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ export default function Home() {
             </div>
             <div>
               <div className="text-[var(--brand)] font-medium">Bulgaria</div>
-              <div className="text-white text-sm opacity-80">+359 87 7282470</div>
+              <div className="text-black dark:text-white text-sm opacity-80">+359 87 7282470</div>
             </div>
           </div>
 
@@ -150,7 +150,7 @@ export default function Home() {
             </div>
             <div>
               <div className="text-[var(--brand)] font-medium">Email</div>
-              <div className="text-white text-sm opacity-80">info@mozuk.net</div>
+              <div className="text-black dark:text-white text-sm opacity-80">info@mozuk.net</div>
             </div>
           </div>
         </div>
