@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   description:
     "Pitch Decks, Product Strategy, Data Analysis, Product Documentation.",
   metadataBase: new URL("https://mozuk.example"),
+  icons: {
+    icon: [
+      { url: "/navbar-logo.ico", type: "image/x-icon" },
+      { url: "/navbar-logo.png", type: "image/png" },
+    ],
+    apple: "/navbar-logo.png",
+    shortcut: "/navbar-logo.png",
+  },
   openGraph: {
     title: "MOZUK",
     description:
