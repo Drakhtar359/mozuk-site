@@ -7,7 +7,7 @@ export default function BusinessCard() {
     title: "Founder & CEO",
     lebanon: "+961 78 847 997",
     bulgaria: "+359 87 7282470",
-    email: "michel.akl@mozuk.net"
+    email: "michel@mozuk.net"
   };
 
   const addToContacts = () => {
