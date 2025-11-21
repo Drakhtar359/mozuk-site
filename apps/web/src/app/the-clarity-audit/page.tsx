@@ -93,59 +93,25 @@ export default function TheClarityAudit() {
 
       <main className="mx-auto max-w-6xl px-5">
 
-      <section className="py-14 border-t border-black/10 dark:border-white/10">
-        <h2 className="text-2xl font-semibold mb-6">What we review</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3">Product Strategy</h3>
-            <p className="text-sm/6 opacity-80">
-              Evaluate your product roadmap, positioning, and strategic direction 
-              for clarity and alignment with business goals.
-            </p>
-          </div>
-          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3">Documentation</h3>
-            <p className="text-sm/6 opacity-80">
-              Assess the clarity, completeness, and usability of your product 
-              documentation and user guides.
-            </p>
-          </div>
-          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3">Communication</h3>
-            <p className="text-sm/6 opacity-80">
-              Review how effectively you communicate your value proposition 
-              to stakeholders, users, and investors.
-            </p>
-          </div>
-          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3">Data & Insights</h3>
-            <p className="text-sm/6 opacity-80">
-              Analyze how you leverage data and insights to inform decisions 
-              and communicate progress.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 border-t border-black/10 dark:border-white/10">
         <h2 className="text-2xl font-semibold mb-6">
           The deliverables: <span className="text-[var(--brand)]">an unfiltered truth</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3 text-center">Narrative Coherence</h3>
+            <h3 className="text-xl font-semibold mb-3">Narrative Coherence</h3>
             <p className="text-sm/6 opacity-80">
               We expose the gaps between what your product does and what your story says. Is your pitch deck a wish list or a strategic document?
             </p>
           </div>
           <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3 text-center">Targeted Alignment</h3>
+            <h3 className="text-xl font-semibold mb-3">Targeted Alignment</h3>
             <p className="text-sm/6 opacity-80">
               We ruthlessly examine the fit between your intended audience, their actual problem, and your proposed solution. Is your market definition based on data or delusion?
             </p>
           </div>
           <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
-            <h3 className="text-xl font-semibold mb-3 text-center">Data Integrity</h3>
+            <h3 className="text-xl font-semibold mb-3">Data Integrity</h3>
             <p className="text-sm/6 opacity-80">
               We verify the data you use to support your claims. Is your analysis sound, or are you just connecting the dots you want to see?
             </p>
