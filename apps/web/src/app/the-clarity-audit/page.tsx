@@ -1,7 +1,23 @@
 export default function TheClarityAudit() {
   return (
     <main className="mx-auto max-w-6xl px-5">
-      <section className="relative min-h-[100svh] flex flex-col justify-center py-12 sm:py-16">
+      <section className="relative min-h-[100svh] flex flex-col justify-center py-12 sm:py-16 overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+        >
+          <source src="/clarity-audit-video.mp4" type="video/mp4" />
+          {/* Fallback for browsers that don't support video */}
+        </video>
+        {/* Optional overlay for better text readability */}
+        <div className="absolute inset-0 bg-background/40 -z-10" />
+        
+        {/* Content */}
+        <div className="relative z-10">
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
           The Clarity
           <span className="text-[var(--brand)]"> Audit</span>
@@ -13,6 +29,7 @@ export default function TheClarityAudit() {
           <p className="mt-6 text-base sm:text-lg text-black/70 dark:text-white/70">
             This is not a feel-good consultation. It is a forensic deep-dive to challenge the foundational assumptions of your product narrative and communication strategy. We bypass surface-level fixes to identify the points of friction, misdirection, and conceptual weakness that are killing your traction.
           </p>
+        </div>
         </div>
       </section>
 
