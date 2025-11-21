@@ -83,7 +83,7 @@ export default function TheClarityAudit() {
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center relative inline-block">
               The Clarity
               <span className="text-[var(--brand)]"> Audit</span>
-              <span className="absolute -top-2 -right-4 sm:-right-6 text-black dark:text-black text-lg sm:text-xl">©</span>
+              <span className="absolute -top-2 -right-4 sm:-right-6 text-black dark:text-black text-xs sm:text-sm">©</span>
             </h1>
           </div>
           <div className="mt-8 max-w-3xl mx-auto text-center space-y-4">
