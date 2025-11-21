@@ -128,26 +128,28 @@ export default function TheClarityAudit() {
       </section>
 
       <section className="py-16 border-t border-black/10 dark:border-white/10">
-        <h2 className="text-2xl font-semibold mb-6">Deliverables</h2>
-        <div className="rounded-2xl p-8 sm:p-10 border border-black/10 dark:border-white/10 bg-background">
-          <ul className="space-y-4 text-sm/6 opacity-80">
-            <li className="flex items-start gap-3">
-              <span className="text-[var(--brand)] font-semibold">•</span>
-              <span>Comprehensive audit report with findings and recommendations</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[var(--brand)] font-semibold">•</span>
-              <span>Prioritized action items for immediate improvement</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[var(--brand)] font-semibold">•</span>
-              <span>Best practices and industry benchmarks</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[var(--brand)] font-semibold">•</span>
-              <span>Follow-up consultation to discuss findings</span>
-            </li>
-          </ul>
+        <h2 className="text-2xl font-semibold mb-6">
+          The Deliverable: <span className="text-[var(--brand)]">Unfiltered Truth</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
+            <h3 className="text-xl font-semibold mb-3">Narrative Coherence</h3>
+            <p className="text-sm/6 opacity-80">
+              We expose the gaps between what your product does and what your story says. Is your pitch deck a wish list or a strategic document?
+            </p>
+          </div>
+          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
+            <h3 className="text-xl font-semibold mb-3">Targeted Alignment</h3>
+            <p className="text-sm/6 opacity-80">
+              We ruthlessly examine the fit between your intended audience, their actual problem, and your proposed solution. Is your market definition based on data or delusion?
+            </p>
+          </div>
+          <div className="rounded-2xl p-8 border border-black/10 dark:border-white/10 bg-background">
+            <h3 className="text-xl font-semibold mb-3">Data Integrity</h3>
+            <p className="text-sm/6 opacity-80">
+              We verify the data you use to support your claims. Is your analysis sound, or are you just connecting the dots you want to see?
+            </p>
+          </div>
         </div>
       </section>
 
