@@ -7,9 +7,6 @@ export default function TheClarityAudit() {
           <span className="text-[var(--brand)]"> Audit</span>
         </h1>
         <div className="mt-8 max-w-3xl mx-auto text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold">
-            The Clarity Audit: Exposing Your Strategic Gaps
-          </h2>
           <p className="text-lg sm:text-xl text-black/80 dark:text-white/80 font-medium">
             You are wasting time and capital on a product story that doesn't work. The Clarity Audit is the required, objective intervention.
           </p>
