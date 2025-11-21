@@ -79,10 +79,10 @@ export default function TheClarityAudit() {
         
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-6xl px-5 w-full">
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center relative inline-block">
             The Clarity
             <span className="text-[var(--brand)]"> Audit</span>
-            <span className="text-black dark:text-black">©</span>
+            <span className="absolute -top-2 -right-4 sm:-right-6 text-black dark:text-black text-lg sm:text-xl">©</span>
           </h1>
           <div className="mt-8 max-w-3xl mx-auto text-center space-y-4">
             <p className="text-base sm:text-lg text-black/70 dark:text-white/70">
@@ -117,6 +117,20 @@ export default function TheClarityAudit() {
               We verify the data you use to support your claims. Is your analysis sound, or are you just connecting the dots you want to see?
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-t border-black/10 dark:border-white/10">
+        <h2 className="text-2xl font-semibold mb-6">
+          The Outcome: <span className="text-[var(--brand)]">a precise foundation</span>
+        </h2>
+        <div className="rounded-2xl p-8 sm:p-10 border border-black/10 dark:border-white/10 bg-background">
+          <p className="text-sm/6 opacity-80">
+            You receive a precise, prioritized blueprint identifying the 3-5 critical blockages to your growth and communication. This is the unvalidated, unfiltered truth you need to hear, not the comfort you want to buy.
+          </p>
+          <p className="text-sm/6 opacity-80 mt-4">
+            The Clarity Audit is the prerequisite to working with MOZUK. Before we help you build the right story, we ensure you stop telling the wrong one.
+          </p>
         </div>
       </section>
 
