@@ -72,9 +72,25 @@ export default function TheClarityAudit() {
         <div className="absolute inset-0 bg-background/40 -z-10" />
         
         {/* Bottom blur gradient for seamless transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/90 to-transparent" />
-          <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-t from-[var(--background)]/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[400px] -z-10">
+          {/* Very gradual gradient with blur - starts very high up to avoid visible line */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(to top, 
+                #0a0a0a 0%,
+                #0a0a0a 30%,
+                rgba(10, 10, 10, 0.98) 45%,
+                rgba(10, 10, 10, 0.92) 60%,
+                rgba(10, 10, 10, 0.75) 75%,
+                rgba(10, 10, 10, 0.45) 90%,
+                rgba(10, 10, 10, 0.15) 98%,
+                transparent 100%
+              )`,
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)',
+            }}
+          />
         </div>
         
         {/* Content */}
