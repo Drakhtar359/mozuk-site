@@ -71,28 +71,6 @@ export default function TheClarityAudit() {
         {/* Optional overlay for better text readability */}
         <div className="absolute inset-0 bg-background/40 -z-10" />
         
-        {/* Bottom blur gradient for seamless transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-[400px] -z-10">
-          {/* Very gradual gradient with blur - starts very high up to avoid visible line */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(to top, 
-                #0a0a0a 0%,
-                #0a0a0a 30%,
-                rgba(10, 10, 10, 0.98) 45%,
-                rgba(10, 10, 10, 0.92) 60%,
-                rgba(10, 10, 10, 0.75) 75%,
-                rgba(10, 10, 10, 0.45) 90%,
-                rgba(10, 10, 10, 0.15) 98%,
-                transparent 100%
-              )`,
-              backdropFilter: 'blur(4px)',
-              WebkitBackdropFilter: 'blur(4px)',
-            }}
-          />
-        </div>
-        
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-6xl px-5 w-full">
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
