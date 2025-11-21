@@ -100,10 +100,7 @@ export default function TheClarityAudit() {
             <span className="text-[var(--brand)]"> Audit</span>
           </h1>
           <div className="mt-8 max-w-3xl mx-auto text-center space-y-4">
-            <p className="text-lg sm:text-xl text-black/80 dark:text-white/80 font-medium">
-              You are wasting time and capital on a product story that doesn't work. The Clarity Audit is the required, objective intervention.
-            </p>
-            <p className="mt-6 text-base sm:text-lg text-black/70 dark:text-white/70">
+            <p className="text-base sm:text-lg text-black/70 dark:text-white/70">
               This is not a feel-good consultation. It is a forensic deep-dive to challenge the foundational assumptions of your product narrative and communication strategy. We bypass surface-level fixes to identify the points of friction, misdirection, and conceptual weakness that are killing your traction.
             </p>
           </div>
