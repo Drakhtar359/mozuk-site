@@ -49,6 +49,10 @@ export default function TheClarityAudit() {
           muted
           playsInline
           className={`absolute inset-0 w-full h-full object-cover -z-10 ${backgroundImage ? 'hidden' : ''}`}
+          style={{
+            filter: 'blur(2px)',
+            WebkitFilter: 'blur(2px)',
+          }}
         >
           <source src="/clarity-audit-video.mp4" type="video/mp4" />
         </video>
@@ -61,6 +65,8 @@ export default function TheClarityAudit() {
               backgroundImage: `url(${backgroundImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              filter: 'blur(2px)',
+              WebkitFilter: 'blur(2px)',
             }}
           />
         )}
