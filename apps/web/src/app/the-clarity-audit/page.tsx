@@ -1,37 +1,100 @@
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+
 export default function TheClarityAudit() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    
+    if (!video || !canvas) return;
+
+    const captureLastFrame = () => {
+      if (canvas && video && video.readyState >= 2) {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          ctx.drawImage(video, 0, 0);
+          const dataUrl = canvas.toDataURL("image/jpeg");
+          setBackgroundImage(dataUrl);
+        }
+      }
+    };
+
+    const handleVideoEnd = () => {
+      captureLastFrame();
+    };
+
+    video.addEventListener("ended", handleVideoEnd);
+
+    return () => {
+      video.removeEventListener("ended", handleVideoEnd);
+    };
+  }, []);
+
   return (
-    <main className="mx-auto max-w-6xl px-5">
-      <section className="relative min-h-[100svh] flex flex-col justify-center py-12 sm:py-16 overflow-hidden">
+    <>
+      {/* Full-width video hero section */}
+      <section className="relative min-h-[100svh] flex flex-col justify-center py-12 sm:py-16 overflow-hidden w-screen">
         {/* Video Background */}
         <video
+          ref={videoRef}
           autoPlay
-          loop
+          loop={false}
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover -z-10"
+          className={`absolute inset-0 w-full h-full object-cover -z-10 ${backgroundImage ? 'hidden' : ''}`}
         >
           <source src="/clarity-audit-video.mp4" type="video/mp4" />
-          {/* Fallback for browsers that don't support video */}
         </video>
+        
+        {/* Last frame background image (shown after video ends) */}
+        {backgroundImage && (
+          <div
+            className="absolute inset-0 w-full h-full object-cover -z-10"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        )}
+        
+        {/* Hidden canvas for capturing video frame */}
+        <canvas ref={canvasRef} className="hidden" />
+        
         {/* Optional overlay for better text readability */}
         <div className="absolute inset-0 bg-background/40 -z-10" />
         
-        {/* Content */}
-        <div className="relative z-10">
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
-          The Clarity
-          <span className="text-[var(--brand)]"> Audit</span>
-        </h1>
-        <div className="mt-8 max-w-3xl mx-auto text-center space-y-4">
-          <p className="text-lg sm:text-xl text-black/80 dark:text-white/80 font-medium">
-            You are wasting time and capital on a product story that doesn't work. The Clarity Audit is the required, objective intervention.
-          </p>
-          <p className="mt-6 text-base sm:text-lg text-black/70 dark:text-white/70">
-            This is not a feel-good consultation. It is a forensic deep-dive to challenge the foundational assumptions of your product narrative and communication strategy. We bypass surface-level fixes to identify the points of friction, misdirection, and conceptual weakness that are killing your traction.
-          </p>
+        {/* Bottom blur gradient for seamless transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/90 to-transparent" />
+          <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-t from-[var(--background)]/60 to-transparent" />
         </div>
+        
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-6xl px-5 w-full">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-center">
+            The Clarity
+            <span className="text-[var(--brand)]"> Audit</span>
+          </h1>
+          <div className="mt-8 max-w-3xl mx-auto text-center space-y-4">
+            <p className="text-lg sm:text-xl text-black/80 dark:text-white/80 font-medium">
+              You are wasting time and capital on a product story that doesn't work. The Clarity Audit is the required, objective intervention.
+            </p>
+            <p className="mt-6 text-base sm:text-lg text-black/70 dark:text-white/70">
+              This is not a feel-good consultation. It is a forensic deep-dive to challenge the foundational assumptions of your product narrative and communication strategy. We bypass surface-level fixes to identify the points of friction, misdirection, and conceptual weakness that are killing your traction.
+            </p>
+          </div>
         </div>
       </section>
+
+      <main className="mx-auto max-w-6xl px-5">
 
       <section className="py-14 border-t border-black/10 dark:border-white/10">
         <h2 className="text-2xl font-semibold mb-6">What we review</h2>
@@ -104,7 +167,8 @@ export default function TheClarityAudit() {
           </a>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 
