@@ -10,7 +10,7 @@ export default function WhatsAppButton() {
       href="https://wa.me/96179083906"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 flex items-center gap-3 bg-[#25D366] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+      className="fixed bottom-4 right-4 z-50 flex items-center flex-row-reverse gap-3 bg-[#25D366] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
       style={{
         width: isHovered ? 'auto' : '56px',
         height: '56px',
@@ -36,8 +36,8 @@ export default function WhatsAppButton() {
         </svg>
       </div>
       <span 
-        className={`text-white font-medium text-sm whitespace-nowrap transition-opacity duration-300 ${
-          isHovered ? 'opacity-100' : 'opacity-0 w-0'
+        className={`text-white font-medium text-sm whitespace-nowrap transition-all duration-300 ${
+          isHovered ? 'opacity-100 max-w-[300px]' : 'opacity-0 max-w-0 overflow-hidden'
         }`}
       >
         We are on WhatsApp, reach out to us!
