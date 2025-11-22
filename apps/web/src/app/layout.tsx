@@ -73,7 +73,7 @@ export default function RootLayout({
             />
           </svg>
         </a>
-        <footer className="fixed bottom-3 right-4 text-xs opacity-70 select-none">
+        <footer className="fixed bottom-3 left-4 text-xs opacity-70 select-none">
           © MOZUK - 2025
         </footer>
       </body>
