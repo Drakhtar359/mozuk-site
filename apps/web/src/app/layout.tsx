@@ -57,7 +57,7 @@ export default function RootLayout({
           href="https://wa.me/96179083906"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-20 right-4 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
+          className="fixed bottom-4 right-4 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
           aria-label="Contact us on WhatsApp"
         >
           <svg
