@@ -1,6 +1,7 @@
 import ServicesCarousel from "@/components/ServicesCarousel";
 import SatisfactionStat from "@/components/SatisfactionStat";
 import PerformanceLineStat from "@/components/PerformanceLineStat";
+import FundRaisedStat from "@/components/FundRaisedStat";
 
 export default function Home() {
   return (
@@ -32,9 +33,15 @@ export default function Home() {
       </section>
 
       <section className="py-16 border-t border-black/10 dark:border-white/10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12 items-start">
-          <SatisfactionStat />
-          <PerformanceLineStat />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12 items-stretch">
+          <div className="flex flex-col gap-6">
+            <SatisfactionStat />
+            <FundRaisedStat />
+          </div>
+          <div className="flex flex-col gap-6">
+            <PerformanceLineStat />
+            <div>{/* future fourth stat */}</div>
+          </div>
         </div>
       </section>
 
