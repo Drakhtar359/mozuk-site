@@ -27,18 +27,18 @@ export default function Home() {
           </Link>
           <a
             href="#services"
-            className="px-8 py-4 rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-md text-white font-medium hover:bg-white/20 hover:border-white/30 transition-all shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+            className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-medium hover:bg-white/10 hover:border-white/30 transition-all shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
           >
             Our Services
           </a>
         </div>
       </section>
 
-      {/* Services Section - Liquid Glass Card */}
+      {/* Services Section - iOS Liquid Glass */}
       <section id="services" className="mb-24">
-        <div className="relative rounded-[2.5rem] border-2 border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-3xl p-8 sm:p-12 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)] before:absolute before:inset-0 before:rounded-[2.5rem] before:p-[2px] before:bg-gradient-to-br before:from-white/20 before:via-transparent before:to-white/10 before:-z-10">
-          {/* Inner glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-cyan-500/5 rounded-[2.5rem] pointer-events-none"></div>
+        <div className="relative rounded-[2.5rem] border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-8 sm:p-12 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.3)] before:absolute before:inset-0 before:rounded-[2.5rem] before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:pointer-events-none">
+          {/* Subtle inner glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.02] via-transparent to-cyan-500/[0.02] rounded-[2.5rem] pointer-events-none"></div>
 
           <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] relative z-10">Services</h2>
           <div className="relative z-10">
@@ -55,20 +55,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Liquid Glass Grid */}
+      {/* Stats Section - iOS Liquid Glass Grid */}
       <section className="mb-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12">
-          <div className="group relative rounded-3xl border-2 border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.2)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-[var(--brand)]/10 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100">
-            <SatisfactionStat />
+          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="relative z-10">
+              <SatisfactionStat />
+            </div>
           </div>
-          <div className="group relative rounded-3xl border-2 border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.2)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-[var(--brand)]/10 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100">
-            <PerformanceLineStat />
+          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="relative z-10">
+              <PerformanceLineStat />
+            </div>
           </div>
-          <div className="group relative rounded-3xl border-2 border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.2)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-[var(--brand)]/10 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100">
-            <FundRaisedStat />
+          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="relative z-10">
+              <FundRaisedStat />
+            </div>
           </div>
-          <div className="group relative rounded-3xl border-2 border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.2)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-[var(--brand)]/10 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100">
-            <ProjectsCompletedStat />
+          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div className="relative z-10">
+              <ProjectsCompletedStat />
+            </div>
           </div>
         </div>
       </section>

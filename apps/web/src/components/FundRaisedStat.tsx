@@ -64,7 +64,7 @@ export default function FundRaisedStat() {
   }
 
   return (
-    <div ref={rootRef} className="relative flex flex-col items-center justify-end min-h-[230px] sm:min-h-[300px] select-none ">
+    <div ref={rootRef} className="relative flex flex-col items-center justify-center min-h-[230px] sm:min-h-[300px] select-none ">
       <div className="flex flex-col items-center gap-1 z-10">
         <div className="leading-tight">
           <span className="text-2xl sm:text-[2rem] font-extrabold text-[var(--brand)]">${formatNumber(amount)}+</span>
