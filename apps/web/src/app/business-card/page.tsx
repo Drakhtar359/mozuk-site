@@ -77,7 +77,7 @@ END:VCARD`;
               {/* Add to Contacts Button */}
               <button
                 onClick={addToContacts}
-                className="mt-6 sm:mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-white to-gray-100 text-black px-6 py-3 sm:px-8 sm:py-4 text-[3vw] sm:text-[2.5vw] md:text-[1.5vw] lg:text-base font-bold shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] hover:scale-105 transition-all"
+                className="mt-6 sm:mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-white to-gray-100 text-black px-6 py-3 sm:px-8 sm:py-4 text-[3vw] sm:text-[2.5vw] md:text-[1.5vw] lg:text-base font-bold shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:scale-105 transition-all"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
