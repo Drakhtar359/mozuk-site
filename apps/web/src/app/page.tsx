@@ -106,28 +106,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer Info Area */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-white/70 border-t border-white/20 pt-10">
-        <div className="flex gap-3 hover:text-white transition cursor-default">
-          <div className="p-2 rounded bg-gradient-to-br from-white/10 to-white/5 text-[var(--brand)] font-bold border border-white/10">LB</div>
-          <div>
-            <div className="font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">Lebanon</div>
-            <div className="drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">+961 7884 7997</div>
-          </div>
+      {/* Modern Contact Footer */}
+      <div className="border-t border-white/10 pt-16 pb-8">
+        <div className="text-center mb-10">
+          <h3 className="text-2xl font-bold text-white mb-2">Get in Touch</h3>
+          <p className="text-white/60 text-sm">We're here to help bring your vision to life</p>
         </div>
-        <div className="flex gap-3 hover:text-white transition cursor-default">
-          <div className="p-2 rounded bg-gradient-to-br from-white/10 to-white/5 text-[var(--brand)] font-bold border border-white/10">BG</div>
-          <div>
-            <div className="font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">Bulgaria</div>
-            <div className="drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">+359 87 7282470</div>
-          </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-4xl mx-auto">
+          {/* Lebanon */}
+          <a href="tel:+9617884799" className="group relative w-full sm:w-auto rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10 p-5 flex items-center gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-cyan-500/20 flex items-center justify-center border border-[var(--brand)]/30">
+                <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="text-xs text-white/50 uppercase tracking-wider font-medium">Lebanon</div>
+                <div className="text-white font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">+961 7884 7997</div>
+              </div>
+            </div>
+          </a>
+
+          {/* Bulgaria */}
+          <a href="tel:+359877282470" className="group relative w-full sm:w-auto rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10 p-5 flex items-center gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-cyan-500/20 flex items-center justify-center border border-[var(--brand)]/30">
+                <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="text-xs text-white/50 uppercase tracking-wider font-medium">Bulgaria</div>
+                <div className="text-white font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">+359 87 7282470</div>
+              </div>
+            </div>
+          </a>
+
+          {/* Email */}
+          <a href="mailto:info@mozuk.net" className="group relative w-full sm:w-auto rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10 p-5 flex items-center gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-cyan-500/20 flex items-center justify-center border border-[var(--brand)]/30">
+                <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="text-xs text-white/50 uppercase tracking-wider font-medium">Email</div>
+                <div className="text-white font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">info@mozuk.net</div>
+              </div>
+            </div>
+          </a>
         </div>
-        <div className="flex gap-3 hover:text-white transition cursor-default">
-          <div className="p-2 rounded bg-gradient-to-br from-white/10 to-white/5 text-[var(--brand)] font-bold border border-white/10">@</div>
-          <div>
-            <div className="font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">Email</div>
-            <div className="drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">info@mozuk.net</div>
-          </div>
+
+        <div className="text-center mt-12 text-white/40 text-xs">
+          © MOZUK 2025 · Connecting dots that matter
         </div>
       </div>
     </main>
