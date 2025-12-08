@@ -43,21 +43,8 @@ export default function MozukForm() {
           </p>
         </div>
 
-        {/* Advanced Liquid Glass Form - Ultra Transparent */}
-        <div className="group relative rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset]">
-          {/* Multi-layer glass background - ultra transparent with smooth gradients */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-white/[0.015] via-white/[0.01] to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.02] via-transparent via-transparent to-transparent"></div>
-          <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
-
-          {/* Border gradient */}
-          <div className="absolute inset-0 rounded-3xl border border-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"></div>
-
-          {/* Top highlight */}
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-
-          {/* Subtle shimmer effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-50"></div>
+        {/* Minimalist Form Container */}
+        <div className="relative rounded-3xl overflow-hidden">
           {sent ? (
             <div className="relative z-10 flex flex-col items-center justify-center py-24 px-8 text-center animate-fade-in">
               <div className="w-20 h-20 rounded-full bg-[var(--brand)]/20 flex items-center justify-center mb-6 border-2 border-[var(--brand)]/50 shadow-[0_0_30px_rgba(4,168,154,0.3)]">
