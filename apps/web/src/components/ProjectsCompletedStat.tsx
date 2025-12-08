@@ -2,13 +2,16 @@
 
 import { useRef, useEffect, useState } from "react";
 
-const TARGET = 35;
+const TARGET = 25;
 
 export default function ProjectsCompletedStat() {
-  const [count, setCount] = useState(0);
+  const [activeCount, setActiveCount] = useState(0);
   const [showDesc, setShowDesc] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const hasAnimated = useRef(false);
+
+  // Generate 25 dots (5x5 grid)
+  const dots = Array.from({ length: 25 }, (_, i) => i);
 
   useEffect(() => {
     const el = rootRef.current;
@@ -16,43 +19,52 @@ export default function ProjectsCompletedStat() {
     const observer = new window.IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && !hasAnimated.current) {
         hasAnimated.current = true;
-        animateIncrement();
+        animateGrid();
       }
     }, { threshold: 0.6 });
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  function animateIncrement() {
-    const duration = 2000;
-    const start = performance.now();
+  function animateGrid() {
+    const totalDots = 25;
+    const durationPerDot = 50; // ms per dot
 
-    function frame(now: number) {
-      const t = Math.min(1, (now - start) / duration);
-      // Ease out expo
-      const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-
-      setCount(Math.round(eased * TARGET));
-
-      if (t < 1) {
-        requestAnimationFrame(frame);
-      } else {
-        setCount(TARGET);
+    let current = 0;
+    const interval = setInterval(() => {
+      current++;
+      setActiveCount(current);
+      if (current >= totalDots) {
+        clearInterval(interval);
         setTimeout(() => setShowDesc(true), 500);
       }
-    }
-    requestAnimationFrame(frame);
+    }, durationPerDot);
   }
 
   return (
-    <div ref={rootRef} className="relative flex flex-col items-center justify-end min-h-[230px] sm:min-h-[300px] select-none">
-      <div className="flex flex-col items-center gap-2 w-full">
-        <div className="leading-tight">
-          <span className="text-2xl sm:text-[2rem] font-extrabold text-[var(--brand)]">{count}+</span>
-          <span className="text-black dark:text-white text-lg sm:text-2xl font-bold ml-2">projects</span>
+    <div ref={rootRef} className="relative flex flex-col items-center justify-center min-h-[230px] sm:min-h-[300px] select-none">
+      <div className="flex flex-col items-center gap-6 w-full">
+        {/* 5x5 Grid */}
+        <div className="grid grid-cols-5 gap-2 sm:gap-3">
+          {dots.map((i) => (
+            <div
+              key={i}
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${i < activeCount
+                  ? "bg-[var(--brand)] scale-100 opacity-100"
+                  : "bg-black/10 dark:bg-white/10 scale-75 opacity-50"
+                }`}
+            />
+          ))}
         </div>
-        <div className={`text-xs sm:text-sm max-w-[180px] text-center mt-2 transition-opacity duration-700 ${showDesc ? "opacity-90" : "opacity-0"}`}>
-          delivered with excellence across<br />multiple industries and regions
+
+        <div className="flex flex-col items-center gap-1">
+          <div className="leading-tight">
+            <span className="text-2xl sm:text-[2rem] font-extrabold text-[var(--brand)]">{TARGET}+</span>
+            <span className="text-black dark:text-white text-lg sm:text-2xl font-bold ml-2">projects</span>
+          </div>
+          <div className={`text-xs sm:text-sm max-w-[180px] text-center transition-opacity duration-700 ${showDesc ? "opacity-90" : "opacity-0"}`}>
+            delivered with excellence across<br />multiple industries and regions
+          </div>
         </div>
       </div>
     </div>
