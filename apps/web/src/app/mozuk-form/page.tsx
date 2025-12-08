@@ -43,11 +43,11 @@ export default function MozukForm() {
           </p>
         </div>
 
-        {/* Advanced Liquid Glass Form */}
+        {/* Advanced Liquid Glass Form - More Transparent */}
         <div className="group relative rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset]">
-          {/* Multi-layer glass background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05]"></div>
+          {/* Multi-layer glass background - reduced opacity */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.05] via-transparent to-cyan-500/[0.03]"></div>
           <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
 
           {/* Border gradient */}
