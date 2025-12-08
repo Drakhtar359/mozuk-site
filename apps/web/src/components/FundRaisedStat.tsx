@@ -65,13 +65,16 @@ export default function FundRaisedStat() {
 
   return (
     <div ref={rootRef} className="relative flex flex-col items-center justify-end min-h-[230px] sm:min-h-[300px] select-none ">
-      <div className="flex flex-col items-center gap-2 w-full">
+      <div className="flex flex-col items-center gap-1 z-10">
         <div className="leading-tight">
           <span className="text-2xl sm:text-[2rem] font-extrabold text-[var(--brand)]">${formatNumber(amount)}+</span>
           <span className="text-black dark:text-white text-lg sm:text-2xl font-bold ml-2">raised</span>
         </div>
-        <div className={`text-xs sm:text-sm max-w-[180px] text-center mt-2 transition-opacity duration-700 ${showDesc ? "opacity-90" : "opacity-0"}`}>
-          through amazing pitches, accurate data analysis<br />and delicate strategic decisions
+        {/* Fixed height container for description to ensure alignment with neighbor */}
+        <div className="h-10 sm:h-12 flex items-start justify-center">
+          <div className={`text-xs sm:text-sm max-w-[280px] text-center transition-opacity duration-700 ${showDesc ? "opacity-90" : "opacity-0"}`}>
+            through amazing pitches, accurate data analysis and delicate strategic decisions
+          </div>
         </div>
       </div>
     </div>

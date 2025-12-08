@@ -34,15 +34,11 @@ export default function Home() {
       </section>
 
       <section className="py-16 border-t border-black/10 dark:border-white/10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12 items-stretch">
-          <div className="flex flex-col gap-6">
-            <SatisfactionStat />
-            <FundRaisedStat />
-          </div>
-          <div className="flex flex-col gap-6">
-            <PerformanceLineStat />
-            <ProjectsCompletedStat />
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 lg:gap-x-12 lg:gap-y-6 items-stretch">
+          <SatisfactionStat />
+          <PerformanceLineStat />
+          <FundRaisedStat />
+          <ProjectsCompletedStat />
         </div>
       </section>
 
