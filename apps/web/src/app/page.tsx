@@ -34,9 +34,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - Minimalist Style */}
+      {/* Services Section - Smooth Borderless */}
       <section id="services" className="mb-24">
-        <div className="group relative rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-white/20 hover:bg-white/[0.02] transition-all duration-300">
+        <div className="group relative rounded-[2.5rem] overflow-hidden hover:bg-white/[0.02] transition-all duration-300">
 
           {/* Content */}
           <div className="relative z-10 p-8 sm:p-12">
@@ -63,7 +63,7 @@ export default function Home() {
             <FundRaisedStat key="funds" />,
             <ProjectsCompletedStat key="projects" />
           ].map((Component, idx) => (
-            <div key={idx} className="group relative rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 hover:bg-white/[0.02] transition-all duration-300">
+            <div key={idx} className="group relative rounded-3xl overflow-hidden hover:bg-white/[0.02] transition-all duration-300">
 
               {/* Content */}
               <div className="relative z-10 p-6">
