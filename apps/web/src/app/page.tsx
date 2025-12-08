@@ -37,7 +37,6 @@ export default function Home() {
       {/* Services Section - Minimalist Style */}
       <section id="services" className="mb-24">
         <div className="group relative rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-white/20 hover:bg-white/[0.02] transition-all duration-300">
-          <div className="absolute inset-0 backdrop-blur-xl"></div>
 
           {/* Content */}
           <div className="relative z-10 p-8 sm:p-12">
@@ -65,7 +64,6 @@ export default function Home() {
             <ProjectsCompletedStat key="projects" />
           ].map((Component, idx) => (
             <div key={idx} className="group relative rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 hover:bg-white/[0.02] transition-all duration-300">
-              <div className="absolute inset-0 backdrop-blur-xl"></div>
 
               {/* Content */}
               <div className="relative z-10 p-6">
