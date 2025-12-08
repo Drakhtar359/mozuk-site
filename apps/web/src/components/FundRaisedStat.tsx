@@ -68,7 +68,7 @@ export default function FundRaisedStat() {
       <div className="flex flex-col items-center gap-1 z-10">
         <div className="leading-tight">
           <span className="text-2xl sm:text-[2rem] font-extrabold text-[var(--brand)]">${formatNumber(amount)}+</span>
-          <span className="text-black dark:text-white text-lg sm:text-2xl font-bold ml-2">raised</span>
+          <span className="text-white text-lg sm:text-2xl font-bold ml-2">raised</span>
         </div>
         {/* Fixed height container for description to ensure alignment with neighbor */}
         <div className="h-10 sm:h-12 flex items-start justify-center">

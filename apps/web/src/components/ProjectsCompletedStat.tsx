@@ -62,7 +62,7 @@ export default function ProjectsCompletedStat() {
             </div>
 
             <span className="text-2xl sm:text-[2rem] font-extrabold text-[var(--brand)]">{TARGET}+</span>
-            <span className="text-black dark:text-white text-lg sm:text-2xl font-bold ml-2">projects</span>
+            <span className="text-white text-lg sm:text-2xl font-bold ml-2">projects</span>
           </div>
           {/* Fixed height container for description to ensure alignment with neighbor */}
           <div className="h-10 sm:h-12 flex items-start justify-center">
