@@ -6,160 +6,264 @@ export default function MozukForm() {
   const [sent, setSent] = useState(false);
   const [wantsOther, setWantsOther] = useState(false);
   const [stage, setStage] = useState<string>("");
+
+  // Interaction states for sleek input animations
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+
   const services = useMemo(
     () => [
-      { key: "pitch", label: "Pitch Decks", sublabel: "(Investor-ready presentations)" },
-      { key: "roadmaps", label: "Roadmaps", sublabel: "(Strategic product timelines)" },
-      { key: "docs", label: "Product Documentation", sublabel: "(Datasheets & catalogs)" },
-      { key: "analytics", label: "Data Analysis", sublabel: "(Turning numbers into insights)" },
-      { key: "other", label: "Other" },
+      { key: "pitch", label: "Pitch Decks", sublabel: "Investor-ready" },
+      { key: "roadmaps", label: "Roadmaps", sublabel: "Strategic timelines" },
+      { key: "docs", label: "Product Docs", sublabel: "Datasheets & catalogs" },
+      { key: "analytics", label: "Data Analysis", sublabel: "Insights from data" },
+      { key: "other", label: "Something else", sublabel: "Tailored needs" },
     ],
     []
   );
 
   return (
-    <main className="mx-auto max-w-2xl px-5 py-16">
-      <h1 className="text-center text-3xl sm:text-5xl font-bold">
-        MOZ<span className="text-[var(--brand)]">U</span>K
-      </h1>
-      <p className="mt-3 text-center text-sm/6 opacity-80">
-        Connecting dots that <span className="text-[var(--brand)] font-semibold">Matter</span>.
-      </p>
+    <main className="relative min-h-[100svh] flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden">
+      {/* Background is now global in layout, but we can keep component if needed for special intensity, or remove if layout covers it. 
+          Since layout covers it globally, we don't strictly need it here unless we want a DOUBLE layer (which might be too heavy).
+          The layout.tsx update puts ConstellationCanvas globally. 
+          Let's NOT duplicate it here to save performance, but we still need the z-index container.
+      */}
 
-      <form
-        className="mt-10 grid gap-5"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setSent(true);
-        }}
-      >
-        {/* Name */}
-        <label className="grid gap-2">
-          <span className="text-xs text-[var(--brand)]">Name</span>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your full name"
-            required
-            className="rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
-          />
-        </label>
+      {/* Glassmorphism Container */}
+      <div className="relative z-10 w-full max-w-2xl animate-fade-in-up mt-20 mb-20">
 
-        {/* Email */}
-        <label className="grid gap-2">
-          <span className="text-xs text-[var(--brand)]">Email</span>
-          <input
-            type="email"
-            name="email"
-            placeholder="name@email.com"
-            required
-            className="rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
-          />
-        </label>
+        {/* Header Section */}
+        <div className="text-center mb-10">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-4 text-white drop-shadow-xl">
+            Let’s Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand)] to-cyan-400">Future</span>.
+          </h1>
+          <p className="text-lg text-white/70 max-w-md mx-auto leading-relaxed">
+            Ready to connect the dots? <br />
+            Your next big milestone starts with a simple "Hello".
+          </p>
+        </div>
 
-        {/* Company */}
-        <label className="grid gap-2">
-          <span className="text-xs text-[var(--brand)]">Company / Startup name</span>
-          <input
-            type="text"
-            name="company"
-                  placeholder="Mozuk Inc."
-            className="rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
-          />
-        </label>
+        {/* The Glass Form */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-2xl shadow-2xl overflow-hidden ring-1 ring-white/5">
+          {sent ? (
+            <div className="flex flex-col items-center justify-center py-24 px-8 text-center animate-fade-in">
+              <div className="w-20 h-20 rounded-full bg-[var(--brand)]/20 flex items-center justify-center mb-6 border border-[var(--brand)]/50">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--brand)]">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-2">Message Sent!</h2>
+              <p className="text-white/60 text-lg">We’ve received your signal. Expect a reply within 24 hours.</p>
+              <button
+                onClick={() => window.location.href = '/'}
+                className="mt-8 px-6 py-2 rounded-full border border-white/10 text-white/50 hover:text-white hover:bg-white/10 transition"
+              >
+                Return Home
+              </button>
+            </div>
+          ) : (
+            <form
+              className="p-8 sm:p-10 grid gap-8"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSent(true);
+              }}
+            >
+              {/* Row 1: Identity */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="group relative">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    className="peer w-full bg-transparent border-b-2 border-white/20 py-3 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300"
+                    placeholder="Name"
+                  />
+                  <label
+                    htmlFor="name"
+                    className="absolute left-0 -top-3.5 text-xs text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--brand)]"
+                  >
+                    Full Name
+                  </label>
+                </div>
 
-        {/* Industry */}
-        <label className="grid gap-2">
-          <span className="text-xs text-[var(--brand)]">Industry</span>
-          <input
-            type="text"
-            name="industry"
-            placeholder="e.g. SaaS, Renewable Energy, Fashion, …"
-            className="rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
-          />
-        </label>
+                <div className="group relative">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    className="peer w-full bg-transparent border-b-2 border-white/20 py-3 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300"
+                    placeholder="Email"
+                  />
+                  <label
+                    htmlFor="email"
+                    className="absolute left-0 -top-3.5 text-xs text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--brand)]"
+                  >
+                    Email Address
+                  </label>
+                </div>
+              </div>
 
-        {/* Services */}
-        <fieldset className="grid gap-3">
-          <legend className="text-xs text-[var(--brand)] mb-3 sm:mb-4">Service you’re interested in</legend>
-          <div className="grid gap-2">
-            {services.map((s) => (
-              <label key={s.key} className="inline-flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value={s.key}
-                  onChange={(e) => {
-                    if (s.key === "other") setWantsOther(e.currentTarget.checked);
-                  }}
-                  className="mt-0.5 h-4 w-4 rounded border-black/20 dark:border-white/20 text-[var(--brand)] focus:ring-[var(--brand)] transition"
+              {/* Row 2: Context */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="group relative">
+                  <input
+                    type="text"
+                    name="company"
+                    id="company"
+                    className="peer w-full bg-transparent border-b-2 border-white/20 py-3 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300"
+                    placeholder="Company"
+                  />
+                  <label
+                    htmlFor="company"
+                    className="absolute left-0 -top-3.5 text-xs text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--brand)]"
+                  >
+                    Company Name
+                  </label>
+                </div>
+
+                <div className="group relative">
+                  <input
+                    type="text"
+                    name="industry"
+                    id="industry"
+                    className="peer w-full bg-transparent border-b-2 border-white/20 py-3 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300"
+                    placeholder="Industry"
+                  />
+                  <label
+                    htmlFor="industry"
+                    className="absolute left-0 -top-3.5 text-xs text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--brand)]"
+                  >
+                    Industry
+                  </label>
+                </div>
+              </div>
+
+              {/* Service Selection */}
+              <div className="space-y-4">
+                <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Where do we fit in?</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {services.map((s) => (
+                    <label
+                      key={s.key}
+                      className={`relative flex items - center p - 4 rounded - xl border cursor - pointer transition - all duration - 300 group
+                        ${focusedField === s.key
+                          ? "bg-[var(--brand)]/10 border-[var(--brand)]"
+                          : "bg-white/5 border-white/10 hover:border-white/30"
+                        } `}
+                      onMouseEnter={() => setFocusedField(s.key)}
+                      onMouseLeave={() => setFocusedField(null)}
+                    >
+                      <input
+                        type="checkbox"
+                        name="services"
+                        value={s.key}
+                        className="peer sr-only"
+                        onChange={(e) => {
+                          // Toggle Logic visual if needed, currently driven by :checked + div
+                          if (s.key === "other") setWantsOther(e.currentTarget.checked);
+                        }}
+                      />
+                      {/* Custom Checkbox Circle */}
+                      <div className="w-5 h-5 rounded border border-white/40 mr-3 peer-checked:bg-[var(--brand)] peer-checked:border-[var(--brand)] flex items-center justify-center transition-colors">
+                        <svg className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium text-white">{s.label}</span>
+                        {s.sublabel && <span className="text-xs text-white/50">{s.sublabel}</span>}
+                      </div>
+                      {/* Glow Effect on Hover */}
+                      <div className="absolute inset-0 rounded-xl bg-[var(--brand)]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                    </label>
+                  ))}
+                </div>
+                {wantsOther && (
+                  <input
+                    type="text"
+                    name="otherService"
+                    placeholder="Tell us what you need..."
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[var(--brand)] focus:outline-none transition-all animate-fade-in"
+                  />
+                )}
+              </div>
+
+              {/* Stage Selection */}
+              <div className="space-y-4">
+                <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Current Stage</span>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { key: "idea", label: "Idea" },
+                    { key: "startup", label: "Early Stage" },
+                    { key: "scaling", label: "Scaling" },
+                    { key: "enterprise", label: "Enterprise" },
+                  ].map((opt) => (
+                    <label key={opt.key} className="cursor-pointer">
+                      <input
+                        type="radio"
+                        name="stage"
+                        value={opt.key}
+                        className="peer sr-only"
+                        checked={stage === opt.key}
+                        onChange={() => setStage(opt.key)}
+                      />
+                      <span className="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm hover:bg-white/10 transition-all peer-checked:bg-[var(--brand)] peer-checked:text-white peer-checked:border-[var(--brand)] peer-checked:shadow-[0_0_15px_rgba(4,168,154,0.4)]">
+                        {opt.label}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="group relative mt-2">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={4}
+                  required
+                  className="peer w-full bg-transparent border rounded-xl border-white/20 p-4 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300 resize-none"
+                  placeholder="Details"
                 />
-                <span className="text-sm/6 opacity-90">
-                  {s.label} {s.sublabel && <span className="opacity-60">{s.sublabel}</span>}
+                <label
+                  htmlFor="message"
+                  className="absolute left-4 -top-3 text-xs bg-[#0a0a0a] px-1 text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[var(--brand)] peer-focus:bg-[#0a0a0a]"
+                >
+                  Project Details
+                </label>
+              </div>
+
+              {/* Action */}
+              <button
+                type="submit"
+                className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)] to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                <span className="relative flex items-center justify-center gap-2">
+                  Launch Message
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
                 </span>
-              </label>
-            ))}
-          </div>
-          {wantsOther && (
-            <input
-              type="text"
-              name="otherService"
-              placeholder="Describe other service…"
-              className="mt-1 rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
-            />
+              </button>
+
+            </form>
           )}
-        </fieldset>
+        </div>
 
-        {/* Stage */}
-        <fieldset className="grid gap-3">
-          <legend className="text-xs text-[var(--brand)] mb-3 sm:mb-4">Project stage</legend>
-          <div className="grid gap-2">
-            {[
-              { key: "idea", label: "Idea Stage (Still shaping the concept)" },
-              { key: "growth", label: "Early Growth (Building traction)" },
-              { key: "scaling", label: "Scaling (Expanding fast)" },
-            ].map((opt) => (
-              <label key={opt.key} className="inline-flex items-start gap-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="stage"
-                  value={opt.key}
-                  checked={stage === opt.key}
-                  onChange={() => setStage(opt.key)}
-                  className="mt-0.5 h-4 w-4 border-black/20 dark:border-white/20 text-[var(--brand)] focus:ring-[var(--brand)] transition"
-                />
-                <span className="text-sm/6 opacity-90">{opt.label}</span>
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        {/* Footer Note */}
+        <p className="text-center text-white/30 text-xs mt-6">
+          Innovation awaits. We typically reply within 1 business day.
+        </p>
 
-        {/* Message */}
-        <label className="grid gap-2">
-          <span className="text-xs text-[var(--brand)]">Message / Details</span>
-          <textarea
-            name="message"
-            rows={6}
-            placeholder="Tell us about your project, goals, or challenges…"
-            className="rounded-md border border-black/10 dark:border-white/10 bg-background px-3 py-2 outline-none transition focus:ring-2 focus:ring-[var(--brand)]"
-            required
-          />
-        </label>
-
-        {/* Submit */}
-        <button
-          type="submit"
-          className="mt-2 inline-flex items-center justify-center rounded-md bg-[var(--brand)] px-5 py-2.5 text-white font-medium shadow-sm transition duration-200 hover:opacity-95 hover:scale-[1.01] active:scale-[0.99]"
-        >
-          Connect the Dots
-        </button>
-
-        {sent && (
-          <p className="text-sm text-[var(--brand)]">Thanks! We’ll be in touch.</p>
-        )}
-      </form>
+      </div>
     </main>
   );
 }
+
 
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeroBackground from "@/components/HeroBackground";
+import ConstellationCanvas from "@/components/ConstellationCanvas";
 import ScrollReset from "@/components/ScrollReset";
 import Navigation from "@/components/Navigation";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -43,16 +43,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}>
-        <div className="fixed inset-0 -z-10">
-          <HeroBackground />
-        </div>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0a0a] text-white selection:bg-[var(--brand)] selection:text-white relative`}>
+        <ConstellationCanvas />
         <ScrollReset />
-        <header className="sticky top-0 z-40 border-b border-black/10 dark:border-white/10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <header className="sticky top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur-md">
           <Navigation />
         </header>
-        {children}
+        <div className="relative z-10">
+          {children}
+        </div>
         <WhatsAppButton />
         <footer className="fixed bottom-3 left-4 text-xs opacity-70 select-none">
           © MOZUK - 2025
