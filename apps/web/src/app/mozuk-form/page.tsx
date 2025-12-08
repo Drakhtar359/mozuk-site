@@ -148,11 +148,11 @@ export default function MozukForm() {
                   {services.map((s) => (
                     <label
                       key={s.key}
-                      className={`relative flex items - center p - 4 rounded - xl border cursor - pointer transition - all duration - 300 group
+                      className={`relative flex items-center p-4 rounded-xl border cursor-pointer transition-all duration-300 group
                         ${focusedField === s.key
                           ? "bg-[var(--brand)]/10 border-[var(--brand)]"
                           : "bg-white/5 border-white/10 hover:border-white/30"
-                        } `}
+                        }`}
                       onMouseEnter={() => setFocusedField(s.key)}
                       onMouseLeave={() => setFocusedField(null)}
                     >
@@ -167,7 +167,7 @@ export default function MozukForm() {
                         }}
                       />
                       {/* Custom Checkbox Circle */}
-                      <div className="w-5 h-5 rounded border border-white/40 mr-3 peer-checked:bg-[var(--brand)] peer-checked:border-[var(--brand)] flex items-center justify-center transition-colors">
+                      <div className="flex-shrink-0 w-5 h-5 rounded border border-white/40 mr-3 peer-checked:bg-[var(--brand)] peer-checked:border-[var(--brand)] flex items-center justify-center transition-colors">
                         <svg className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
