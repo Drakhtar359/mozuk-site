@@ -26,7 +26,7 @@ export default function FundRaisedStat() {
   }, []);
 
   function animateIncrement() {
-    const fastDuration = 1200, slowDuration = 1200;
+    const fastDuration = 750, slowDuration = 500;
     const fastTarget = Math.round(TARGET * FAST_PCT / 100);
     const start = performance.now();
     // Fast part
@@ -49,7 +49,7 @@ export default function FundRaisedStat() {
             requestAnimationFrame(slowFrame);
           } else {
             setAmount(TARGET);
-            setTimeout(() => setShowDesc(true), 600);
+            setTimeout(() => setShowDesc(true), 500);
           }
         }
         requestAnimationFrame(slowFrame);
