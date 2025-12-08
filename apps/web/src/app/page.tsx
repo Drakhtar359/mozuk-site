@@ -34,13 +34,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - Advanced Liquid Glass */}
+      {/* Services Section - Optimized Blur */}
       <section id="services" className="mb-24">
         <div className="group relative rounded-[2.5rem] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset]">
           {/* Multi-layer glass effect */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05]"></div>
-          <div className="absolute inset-0 backdrop-blur-3xl backdrop-saturate-150"></div>
+          <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
 
           {/* Border gradient */}
           <div className="absolute inset-0 rounded-[2.5rem] border border-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"></div>
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Advanced Liquid Glass Grid */}
+      {/* Stats Section - Optimized Blur */}
       <section className="mb-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12">
           {[
@@ -77,7 +77,7 @@ export default function Home() {
               {/* Multi-layer glass background */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
               <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 backdrop-blur-3xl backdrop-saturate-150"></div>
+              <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
 
               {/* Animated border gradient */}
               <div className="absolute inset-0 rounded-3xl border border-white/20 group-hover:border-[var(--brand)]/30 transition-colors duration-500 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"></div>
@@ -97,8 +97,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Trigger */}
-      <section id="contact" className="text-center py-20">
+      {/* Contact Trigger - Reduced spacing */}
+      <section id="contact" className="text-center py-12">
         <div className="inline-block p-[3px] rounded-full bg-gradient-to-r from-[var(--brand)] via-cyan-400 to-[var(--brand)] shadow-[0_0_40px_rgba(4,168,154,0.4)]">
           <Link href="/mozuk-form" className="block px-10 py-5 rounded-full bg-gradient-to-br from-black/90 to-black/70 hover:from-black/70 hover:to-black/50 transition-all text-white text-xl font-bold shadow-inner">
             Let's connect the dots &rarr;
