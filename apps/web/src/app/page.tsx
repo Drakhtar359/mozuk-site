@@ -34,12 +34,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - Optimized Blur */}
+      {/* Services Section - More Transparent */}
       <section id="services" className="mb-24">
         <div className="group relative rounded-[2.5rem] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset]">
-          {/* Multi-layer glass effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05]"></div>
+          {/* Multi-layer glass effect - reduced opacity */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.05] via-transparent to-cyan-500/[0.03]"></div>
           <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
 
           {/* Border gradient */}
@@ -74,9 +74,9 @@ export default function Home() {
             <ProjectsCompletedStat key="projects" />
           ].map((Component, idx) => (
             <div key={idx} className="group relative rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset] hover:shadow-[0_12px_48px_rgba(4,168,154,0.2),0_0_0_1px_rgba(4,168,154,0.2)_inset] transition-all duration-500">
-              {/* Multi-layer glass background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Multi-layer glass background - reduced opacity */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.05] via-transparent to-cyan-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
 
               {/* Animated border gradient */}
