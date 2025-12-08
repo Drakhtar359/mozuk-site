@@ -34,14 +34,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - iOS Liquid Glass */}
+      {/* Services Section - Advanced Liquid Glass */}
       <section id="services" className="mb-24">
-        <div className="relative rounded-[2.5rem] border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-8 sm:p-12 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.3)] before:absolute before:inset-0 before:rounded-[2.5rem] before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:pointer-events-none">
-          {/* Subtle inner glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.02] via-transparent to-cyan-500/[0.02] rounded-[2.5rem] pointer-events-none"></div>
+        <div className="group relative rounded-[2.5rem] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset]">
+          {/* Multi-layer glass effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05]"></div>
+          <div className="absolute inset-0 backdrop-blur-3xl backdrop-saturate-150"></div>
 
-          <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] relative z-10">Services</h2>
-          <div className="relative z-10">
+          {/* Border gradient */}
+          <div className="absolute inset-0 rounded-[2.5rem] border border-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"></div>
+
+          {/* Top highlight */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+
+          {/* Content */}
+          <div className="relative z-10 p-8 sm:p-12">
+            <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Services</h2>
             <ServicesCarousel
               services={[
                 { title: "Pitch Decks", description: "Investor-ready narratives and crisp visuals." },
@@ -55,33 +64,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section - iOS Liquid Glass Grid */}
+      {/* Stats Section - Advanced Liquid Glass Grid */}
       <section className="mb-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-12">
-          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="relative z-10">
-              <SatisfactionStat />
+          {[
+            <SatisfactionStat key="satisfaction" />,
+            <PerformanceLineStat key="performance" />,
+            <FundRaisedStat key="funds" />,
+            <ProjectsCompletedStat key="projects" />
+          ].map((Component, idx) => (
+            <div key={idx} className="group relative rounded-3xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset] hover:shadow-[0_12px_48px_rgba(4,168,154,0.2),0_0_0_1px_rgba(4,168,154,0.2)_inset] transition-all duration-500">
+              {/* Multi-layer glass background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 backdrop-blur-3xl backdrop-saturate-150"></div>
+
+              {/* Animated border gradient */}
+              <div className="absolute inset-0 rounded-3xl border border-white/20 group-hover:border-[var(--brand)]/30 transition-colors duration-500 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"></div>
+
+              {/* Top highlight */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+
+              {/* Hover glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+
+              {/* Content */}
+              <div className="relative z-10 p-6">
+                {Component}
+              </div>
             </div>
-          </div>
-          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="relative z-10">
-              <PerformanceLineStat />
-            </div>
-          </div>
-          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="relative z-10">
-              <FundRaisedStat />
-            </div>
-          </div>
-          <div className="group relative rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_48px_rgba(4,168,154,0.15)] transition-all duration-500 overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-white/5 before:via-transparent before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/[0.03] via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="relative z-10">
-              <ProjectsCompletedStat />
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
