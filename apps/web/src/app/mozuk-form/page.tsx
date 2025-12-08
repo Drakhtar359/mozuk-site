@@ -48,7 +48,7 @@ export default function MozukForm() {
           {/* Multi-layer glass background */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-tl from-[var(--brand)]/[0.08] via-transparent to-cyan-500/[0.05]"></div>
-          <div className="absolute inset-0 backdrop-blur-3xl backdrop-saturate-150"></div>
+          <div className="absolute inset-0 backdrop-blur-xl backdrop-saturate-150"></div>
 
           {/* Border gradient */}
           <div className="absolute inset-0 rounded-3xl border border-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"></div>
