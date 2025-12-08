@@ -121,7 +121,7 @@ export default function Home() {
             className="group flex items-center justify-between px-6 py-4 hover:bg-white/[0.02] transition-all duration-300 rounded-xl border border-transparent hover:border-white/10"
           >
             <div className="flex items-center gap-4">
-              <div className="w-1 h-8 bg-gradient-to-b from-[var(--brand)] to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="w-1 h-8 bg-[var(--brand)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-left">
                 <div className="text-xs text-white/40 uppercase tracking-wider font-medium mb-0.5">Lebanon</div>
                 <div className="text-white/90 font-medium group-hover:text-white transition-colors">+961 7884 7997</div>
@@ -141,7 +141,7 @@ export default function Home() {
             className="group flex items-center justify-between px-6 py-4 hover:bg-white/[0.02] transition-all duration-300 rounded-xl border border-transparent hover:border-white/10"
           >
             <div className="flex items-center gap-4">
-              <div className="w-1 h-8 bg-gradient-to-b from-[var(--brand)] to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="w-1 h-8 bg-[var(--brand)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-left">
                 <div className="text-xs text-white/40 uppercase tracking-wider font-medium mb-0.5">Bulgaria</div>
                 <div className="text-white/90 font-medium group-hover:text-white transition-colors">+359 87 7282470</div>
@@ -161,7 +161,7 @@ export default function Home() {
             className="group flex items-center justify-between px-6 py-4 hover:bg-white/[0.02] transition-all duration-300 rounded-xl border border-transparent hover:border-white/10"
           >
             <div className="flex items-center gap-4">
-              <div className="w-1 h-8 bg-gradient-to-b from-[var(--brand)] to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="w-1 h-8 bg-[var(--brand)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-left">
                 <div className="text-xs text-white/40 uppercase tracking-wider font-medium mb-0.5">Email</div>
                 <div className="text-white/90 font-medium group-hover:text-white transition-colors">info@mozuk.net</div>
