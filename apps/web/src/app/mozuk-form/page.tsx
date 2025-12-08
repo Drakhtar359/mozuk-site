@@ -6,6 +6,7 @@ export default function MozukForm() {
   const [sent, setSent] = useState(false);
   const [wantsOther, setWantsOther] = useState(false);
   const [stage, setStage] = useState<string>("");
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   // Interaction states for sleek input animations
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -145,123 +146,135 @@ export default function MozukForm() {
               <div className="space-y-4">
                 <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Where do we fit in?</span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {services.map((s) => (
-                    <label
-                      key={s.key}
-                      className={`relative flex items-center p-4 rounded-xl border cursor-pointer transition-all duration-300 group
-                        ${focusedField === s.key
-                          ? "bg-[var(--brand)]/10 border-[var(--brand)]"
-                          : "bg-white/5 border-white/10 hover:border-white/30"
-                        }`}
-                      onMouseEnter={() => setFocusedField(s.key)}
-                      onMouseLeave={() => setFocusedField(null)}
-                    >
-                      <input
-                        type="checkbox"
-                        name="services"
-                        value={s.key}
-                        className="peer sr-only"
-                        onChange={(e) => {
-                          // Toggle Logic visual if needed, currently driven by :checked + div
-                          if (s.key === "other") setWantsOther(e.currentTarget.checked);
+                  {services.map((s) => {
+                    const isSelected = selectedServices.includes(s.key);
+                    return (
+                      <div
+                        key={s.key}
+                        onClick={() => {
+                          if (isSelected) {
+                            setSelectedServices(selectedServices.filter(k => k !== s.key));
+                            if (s.key === "other") setWantsOther(false);
+                          } else {
+                            setSelectedServices([...selectedServices, s.key]);
+                            if (s.key === "other") setWantsOther(true);
+                          }
                         }}
-                      />
-                      {/* Custom Checkbox Circle */}
-                      <div className="flex-shrink-0 w-5 h-5 rounded border border-white/40 mr-3 peer-checked:bg-[var(--brand)] peer-checked:border-[var(--brand)] flex items-center justify-center transition-colors">
-                        <svg className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
+                        className={`relative flex items-center p-4 rounded-xl border cursor-pointer transition-all duration-300 group
+                          ${isSelected
+                            ? "bg-[var(--brand)]/10 border-[var(--brand)] shadow-[0_0_20px_rgba(4,168,154,0.2)]"
+                            : focusedField === s.key
+                              ? "bg-white/5 border-white/30"
+                              : "bg-white/5 border-white/10 hover:border-white/30"
+                          }`}
+                        onMouseEnter={() => setFocusedField(s.key)}
+                        onMouseLeave={() => setFocusedField(null)}
+                      >
+                        {/* Hidden input for form submission */}
+                        {isSelected && (
+                          <input
+                            type="hidden"
+                            name="services"
+                            value={s.key}
+                          />
+                        )}
+
+                        <div className="flex flex-col">
+                          <span className={`text-sm font-medium transition-colors ${isSelected ? "text-white" : "text-white/90"
+                            }`}>{s.label}</span>
+                          {s.sublabel && <span className="text-xs text-white/50">{s.sublabel}</span>}
+                        </div>
+
+                        {/* Brand accent indicator for selected */}
+                        {isSelected && (
+                          <div className="ml-auto flex-shrink-0 w-2 h-2 rounded-full bg-[var(--brand)] shadow-[0_0_8px_rgba(4,168,154,0.6)]" />
+                        )}
                       </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-medium text-white">{s.label}</span>
-                        {s.sublabel && <span className="text-xs text-white/50">{s.sublabel}</span>}
-                      </div>
-                      {/* Glow Effect on Hover */}
-                      <div className="absolute inset-0 rounded-xl bg-[var(--brand)]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                    </label>
-                  ))}
+                    );
+                  })}
                 </div>
-                {wantsOther && (
-                  <input
-                    type="text"
-                    name="otherService"
-                    placeholder="Tell us what you need..."
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[var(--brand)] focus:outline-none transition-all animate-fade-in"
-                  />
-                )}
               </div>
+              {wantsOther && (
+                <input
+                  type="text"
+                  name="otherService"
+                  placeholder="Tell us what you need..."
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[var(--brand)] focus:outline-none transition-all animate-fade-in"
+                />
+              )}
+            </div>
 
               {/* Stage Selection */}
-              <div className="space-y-4">
-                <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Current Stage</span>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { key: "idea", label: "Idea" },
-                    { key: "startup", label: "Early Stage" },
-                    { key: "scaling", label: "Scaling" },
-                    { key: "enterprise", label: "Enterprise" },
-                  ].map((opt) => (
-                    <label key={opt.key} className="cursor-pointer">
-                      <input
-                        type="radio"
-                        name="stage"
-                        value={opt.key}
-                        className="peer sr-only"
-                        checked={stage === opt.key}
-                        onChange={() => setStage(opt.key)}
-                      />
-                      <span className="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm hover:bg-white/10 transition-all peer-checked:bg-[var(--brand)] peer-checked:text-white peer-checked:border-[var(--brand)] peer-checked:shadow-[0_0_15px_rgba(4,168,154,0.4)]">
-                        {opt.label}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Message */}
-              <div className="group relative mt-2">
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  required
-                  className="peer w-full bg-transparent border rounded-xl border-white/20 p-4 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300 resize-none"
-                  placeholder="Details"
-                />
-                <label
-                  htmlFor="message"
-                  className="absolute left-4 -top-3 text-xs bg-[#0a0a0a] px-1 text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[var(--brand)] peer-focus:bg-[#0a0a0a]"
-                >
-                  Project Details
+          <div className="space-y-4">
+            <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Current Stage</span>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { key: "idea", label: "Idea" },
+                { key: "startup", label: "Early Stage" },
+                { key: "scaling", label: "Scaling" },
+                { key: "enterprise", label: "Enterprise" },
+              ].map((opt) => (
+                <label key={opt.key} className="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="stage"
+                    value={opt.key}
+                    className="peer sr-only"
+                    checked={stage === opt.key}
+                    onChange={() => setStage(opt.key)}
+                  />
+                  <span className="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm hover:bg-white/10 transition-all peer-checked:bg-[var(--brand)] peer-checked:text-white peer-checked:border-[var(--brand)] peer-checked:shadow-[0_0_15px_rgba(4,168,154,0.4)]">
+                    {opt.label}
+                  </span>
                 </label>
-              </div>
+              ))}
+            </div>
+          </div>
 
-              {/* Action */}
-              <button
-                type="submit"
-                className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99]"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)] to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                <span className="relative flex items-center justify-center gap-2">
-                  Launch Message
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
-                </span>
-              </button>
+          {/* Message */}
+          <div className="group relative mt-2">
+            <textarea
+              name="message"
+              id="message"
+              rows={4}
+              required
+              className="peer w-full bg-transparent border rounded-xl border-white/20 p-4 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300 resize-none"
+              placeholder="Details"
+            />
+            <label
+              htmlFor="message"
+              className="absolute left-4 -top-3 text-xs bg-[#0a0a0a] px-1 text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[var(--brand)] peer-focus:bg-[#0a0a0a]"
+            >
+              Project Details
+            </label>
+          </div>
 
-            </form>
+          {/* Action */}
+          <button
+            type="submit"
+            className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99]"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)] to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            <span className="relative flex items-center justify-center gap-2">
+              Launch Message
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </span>
+          </button>
+
+        </form>
           )}
-        </div>
-
-        {/* Footer Note */}
-        <p className="text-center text-white/30 text-xs mt-6">
-          Innovation awaits. We typically reply within 1 business day.
-        </p>
-
       </div>
-    </main>
+
+      {/* Footer Note */}
+      <p className="text-center text-white/30 text-xs mt-6">
+        Innovation awaits. We typically reply within 1 business day.
+      </p>
+
+    </div>
+    </main >
   );
 }
 
