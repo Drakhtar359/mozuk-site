@@ -193,87 +193,86 @@ export default function MozukForm() {
                     );
                   })}
                 </div>
+                {wantsOther && (
+                  <input
+                    type="text"
+                    name="otherService"
+                    placeholder="Tell us what you need..."
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[var(--brand)] focus:outline-none transition-all animate-fade-in"
+                  />
+                )}
               </div>
-              {wantsOther && (
-                <input
-                  type="text"
-                  name="otherService"
-                  placeholder="Tell us what you need..."
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:border-[var(--brand)] focus:outline-none transition-all animate-fade-in"
-                />
-              )}
-            </div>
 
               {/* Stage Selection */}
-          <div className="space-y-4">
-            <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Current Stage</span>
-            <div className="flex flex-wrap gap-2">
-              {[
-                { key: "idea", label: "Idea" },
-                { key: "startup", label: "Early Stage" },
-                { key: "scaling", label: "Scaling" },
-                { key: "enterprise", label: "Enterprise" },
-              ].map((opt) => (
-                <label key={opt.key} className="cursor-pointer">
-                  <input
-                    type="radio"
-                    name="stage"
-                    value={opt.key}
-                    className="peer sr-only"
-                    checked={stage === opt.key}
-                    onChange={() => setStage(opt.key)}
-                  />
-                  <span className="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm hover:bg-white/10 transition-all peer-checked:bg-[var(--brand)] peer-checked:text-white peer-checked:border-[var(--brand)] peer-checked:shadow-[0_0_15px_rgba(4,168,154,0.4)]">
-                    {opt.label}
-                  </span>
+              <div className="space-y-4">
+                <span className="block text-sm font-semibold uppercase tracking-wider text-white/40">Current Stage</span>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { key: "idea", label: "Idea" },
+                    { key: "startup", label: "Early Stage" },
+                    { key: "scaling", label: "Scaling" },
+                    { key: "enterprise", label: "Enterprise" },
+                  ].map((opt) => (
+                    <label key={opt.key} className="cursor-pointer">
+                      <input
+                        type="radio"
+                        name="stage"
+                        value={opt.key}
+                        className="peer sr-only"
+                        checked={stage === opt.key}
+                        onChange={() => setStage(opt.key)}
+                      />
+                      <span className="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 text-sm hover:bg-white/10 transition-all peer-checked:bg-[var(--brand)] peer-checked:text-white peer-checked:border-[var(--brand)] peer-checked:shadow-[0_0_15px_rgba(4,168,154,0.4)]">
+                        {opt.label}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="group relative mt-2">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={4}
+                  required
+                  className="peer w-full bg-transparent border rounded-xl border-white/20 p-4 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300 resize-none"
+                  placeholder="Details"
+                />
+                <label
+                  htmlFor="message"
+                  className="absolute left-4 -top-3 text-xs bg-[#0a0a0a] px-1 text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[var(--brand)] peer-focus:bg-[#0a0a0a]"
+                >
+                  Project Details
                 </label>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          {/* Message */}
-          <div className="group relative mt-2">
-            <textarea
-              name="message"
-              id="message"
-              rows={4}
-              required
-              className="peer w-full bg-transparent border rounded-xl border-white/20 p-4 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300 resize-none"
-              placeholder="Details"
-            />
-            <label
-              htmlFor="message"
-              className="absolute left-4 -top-3 text-xs bg-[#0a0a0a] px-1 text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-3 peer-focus:text-xs peer-focus:text-[var(--brand)] peer-focus:bg-[#0a0a0a]"
-            >
-              Project Details
-            </label>
-          </div>
+              {/* Action */}
+              <button
+                type="submit"
+                className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)] to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                <span className="relative flex items-center justify-center gap-2">
+                  Launch Message
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </span>
+              </button>
 
-          {/* Action */}
-          <button
-            type="submit"
-            className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99]"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)] to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-            <span className="relative flex items-center justify-center gap-2">
-              Launch Message
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </span>
-          </button>
-
-        </form>
+            </form>
           )}
+        </div>
+
+        {/* Footer Note */}
+        <p className="text-center text-white/30 text-xs mt-6">
+          Innovation awaits. We typically reply within 1 business day.
+        </p>
+
       </div>
-
-      {/* Footer Note */}
-      <p className="text-center text-white/30 text-xs mt-6">
-        Innovation awaits. We typically reply within 1 business day.
-      </p>
-
-    </div>
     </main >
   );
 }
