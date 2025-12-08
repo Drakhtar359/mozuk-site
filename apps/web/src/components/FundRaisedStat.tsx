@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 
-const TARGET = 1300000;
+const TARGET = 900000;
 const FAST_PCT = 90;
 const END_PCT = 100;
 
