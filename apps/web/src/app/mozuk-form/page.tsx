@@ -34,36 +34,38 @@ export default function MozukForm() {
 
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-4 text-white drop-shadow-xl">
-            Let’s Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand)] to-cyan-400">Future</span>.
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-4 text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+            Let’s Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand)] to-cyan-400 drop-shadow-[0_0_30px_rgba(4,168,154,0.5)]">Future</span>.
           </h1>
-          <p className="text-lg text-white/70 max-w-md mx-auto leading-relaxed">
+          <p className="text-lg text-white/90 max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
             Ready to connect the dots? <br />
             Your next big milestone starts with a simple "Hello".
           </p>
         </div>
 
-        {/* The Glass Form */}
-        <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-2xl shadow-2xl overflow-hidden ring-1 ring-white/5">
+        {/* The Liquid Glass Form */}
+        <div className="relative rounded-3xl border-2 border-white/20 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-[var(--brand)]/10 before:via-transparent before:to-cyan-500/10 before:opacity-50">
+          {/* Inner glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent rounded-3xl pointer-events-none"></div>
           {sent ? (
-            <div className="flex flex-col items-center justify-center py-24 px-8 text-center animate-fade-in">
-              <div className="w-20 h-20 rounded-full bg-[var(--brand)]/20 flex items-center justify-center mb-6 border border-[var(--brand)]/50">
+            <div className="relative z-10 flex flex-col items-center justify-center py-24 px-8 text-center animate-fade-in">
+              <div className="w-20 h-20 rounded-full bg-[var(--brand)]/20 flex items-center justify-center mb-6 border-2 border-[var(--brand)]/50 shadow-[0_0_30px_rgba(4,168,154,0.3)]">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--brand)]">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-white mb-2">Message Sent!</h2>
-              <p className="text-white/60 text-lg">We’ve received your signal. Expect a reply within 24 hours.</p>
+              <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Message Sent!</h2>
+              <p className="text-white/80 text-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">We've received your signal. Expect a reply within 24 hours.</p>
               <button
                 onClick={() => window.location.href = '/'}
-                className="mt-8 px-6 py-2 rounded-full border border-white/10 text-white/50 hover:text-white hover:bg-white/10 transition"
+                className="mt-8 px-6 py-2 rounded-full border-2 border-white/20 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all"
               >
                 Return Home
               </button>
             </div>
           ) : (
             <form
-              className="p-8 sm:p-10 grid gap-8"
+              className="relative z-10 p-8 sm:p-10 grid gap-8"
               onSubmit={(e) => {
                 e.preventDefault();
                 setSent(true);
@@ -77,12 +79,12 @@ export default function MozukForm() {
                     name="name"
                     id="name"
                     required
-                    className="peer w-full bg-transparent border-b-2 border-white/20 py-3 text-white placeholder-transparent focus:border-[var(--brand)] focus:outline-none transition-all duration-300"
+                    className="peer w-full bg-white/5 border-b-2 border-white/30 py-3 text-white placeholder-transparent focus:border-[var(--brand)] focus:bg-white/10 focus:outline-none transition-all duration-300"
                     placeholder="Name"
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-0 -top-3.5 text-xs text-[var(--brand)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/50 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--brand)]"
+                    className="absolute left-0 -top-3.5 text-xs text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-white/60 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--brand)]"
                   >
                     Full Name
                   </label>
