@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 export default function MozukForm() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [wantsOther, setWantsOther] = useState(false);
   const [stage, setStage] = useState<string>("");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -65,11 +66,40 @@ export default function MozukForm() {
           ) : (
             <form
               className="relative z-10 p-8 sm:p-10 grid gap-8"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                setSent(true);
+                setLoading(true);
+
+                const formData = new FormData(e.currentTarget);
+
+                // Append custom JSON data if needed, or rely on FormData
+                // We'll trust FormData to grab all named inputs, 
+                // including the hidden ones and radio buttons.
+
+                // Specifically append the 'services' array which might be tricky in pure FormData 
+                // if we don't have hidden inputs for each, but we DO (lines 174-180).
+
+                try {
+                  const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                  });
+
+                  if (response.ok) {
+                    setSent(true);
+                  } else {
+                    console.error("Form submission failed", response);
+                    alert("Something went wrong. Please try again.");
+                  }
+                } catch (error) {
+                  console.error("Form submission error", error);
+                  alert("Something went wrong. Please try again.");
+                } finally {
+                  setLoading(false);
+                }
               }}
             >
+              <input type="hidden" name="access_key" value="5e27b6f2-f6b6-4b19-a000-1a1e124b76eb" />
               {/* Row 1: Identity */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="group relative">
@@ -251,15 +281,18 @@ export default function MozukForm() {
               {/* Action */}
               <button
                 type="submit"
-                className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99]"
+                disabled={loading}
+                className="group relative w-full overflow-hidden rounded-xl bg-white text-black font-bold py-4 text-lg transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)] to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <span className="relative flex items-center justify-center gap-2">
-                  Launch Message
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
+                  {loading ? "Sending..." : "Launch Message"}
+                  {!loading && (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  )}
                 </span>
               </button>
 
