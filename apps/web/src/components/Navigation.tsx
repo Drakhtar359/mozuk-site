@@ -24,7 +24,7 @@ export default function Navigation() {
         </span>
       </Link>
 
-      {!isHomePage && (
+      {!isHomePage ? (
         <Link
           href="/"
           className="inline-flex items-center justify-center w-10 h-10 hover:opacity-80 transition"
@@ -53,6 +53,8 @@ export default function Navigation() {
             />
           </svg>
         </Link>
+      ) : (
+        <div className="w-10 h-10" />
       )}
     </nav>
   );
