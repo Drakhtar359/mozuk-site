@@ -15,7 +15,7 @@ export default function TechnicalStandard() {
                         <span className="text-sm font-medium text-white/80">Premium Service</span>
                     </div>
 
-                    <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight">
+                    <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight whitespace-nowrap">
                         The <span className="text-[var(--brand)] drop-shadow-[0_0_30px_rgba(4,168,154,0.5)]">Precision</span> Protocol
                     </h1>
 
