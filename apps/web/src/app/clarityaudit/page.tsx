@@ -134,7 +134,7 @@ export default function ClarityAudit() {
 
       {/* Footer */}
       <div className="text-center mt-16 pb-12 text-white/40 text-xs">
-        © MOZUK 2025 · Connecting dots that matter
+        © 2025 MOZUK · Connecting the dots that matter
       </div>
     </main>
   );

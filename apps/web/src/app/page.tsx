@@ -142,7 +142,7 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-16 text-white/40 text-xs">
-          © MOZUK 2025 · Connecting dots that matter
+          © 2025 MOZUK · Connecting the dots that matter
         </div>
       </div>
     </main>
