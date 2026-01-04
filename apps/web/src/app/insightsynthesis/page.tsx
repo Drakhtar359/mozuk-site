@@ -20,7 +20,7 @@ export default function InsightSynthesis() {
                     </h1>
 
                     <p className="text-xl sm:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto">
-                        [Add your subtitle description here - this will be your main value proposition for the Insight Synthesis service]
+                        Data is noise until it's decoded. We transform raw metrics into strategic leverage, building the visual and analytical frameworks that turn hindsight into foresight.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -41,7 +41,7 @@ export default function InsightSynthesis() {
                         What You <span className="text-[var(--brand)]">Get</span>
                     </h2>
                     <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                        [Add your section subtitle here]
+                        Decisions, not just dashboards
                     </p>
                 </div>
 
@@ -54,9 +54,9 @@ export default function InsightSynthesis() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl font-bold mb-3 text-white text-center">[Feature 1 Title]</h3>
+                        <h3 className="text-2xl font-bold mb-3 text-white text-center">Narrative Dashboards</h3>
                         <p className="text-white/70 leading-relaxed">
-                            [Add description for your first feature or deliverable here]
+                            We don't just build charts; we tell stories with numbers. We design custom, high-signal dashboards that filter out the vanity metrics and highlight the KPIs that actually drive your growth.
                         </p>
                     </div>
 
@@ -67,9 +67,9 @@ export default function InsightSynthesis() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl font-bold mb-3 text-white text-center">[Feature 2 Title]</h3>
+                        <h3 className="text-2xl font-bold mb-3 text-white text-center">Behavioral Intelligence</h3>
                         <p className="text-white/70 leading-relaxed">
-                            [Add description for your second feature or deliverable here]
+                            Understand exactly how users move through your product. We map user journeys through data, identifying friction points and uncovering hidden opportunities for optimization and retention.
                         </p>
                     </div>
 
@@ -80,9 +80,9 @@ export default function InsightSynthesis() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
-                        <h3 className="text-2xl font-bold mb-3 text-white text-center">[Feature 3 Title]</h3>
+                        <h3 className="text-2xl font-bold mb-3 text-white text-center">Decision Frameworks</h3>
                         <p className="text-white/70 leading-relaxed">
-                            [Add description for your third feature or deliverable here]
+                            Data without action is a waste of storage. We provide the analytical logic to help you make high-stakes decisions—from feature prioritization to market expansion—with mathematical confidence.
                         </p>
                     </div>
                 </div>
@@ -96,15 +96,26 @@ export default function InsightSynthesis() {
 
                     <div className="relative z-10 max-w-4xl mx-auto">
                         <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-                            The <span className="text-[var(--brand)]">Outcome</span>
+                            From Intuition to <span className="text-[var(--brand)]">Evidence</span>
                         </h2>
                         <div className="space-y-6 text-lg text-white/80 leading-relaxed">
                             <p>
-                                [Add your first outcome paragraph here - describe what the client will receive and the value they'll get]
+                                Stop guessing. The Insight Synthesis gives your leadership team a "Single Source of Truth." By connecting the dots between user behavior and business performance, we deliver:
                             </p>
-                            <p className="pt-4 border-t border-white/10">
-                                [Add your second outcome paragraph here - this could be about how this service fits into the broader MOZUK offering]
-                            </p>
+                            <ul className="text-left space-y-3 max-w-2xl mx-auto">
+                                <li className="flex items-start gap-3">
+                                    <span className="text-[var(--brand)] font-bold mt-1">•</span>
+                                    <span><span className="text-white font-semibold">Reduced Burn:</span> Identify and kill features or strategies that aren't performing.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-[var(--brand)] font-bold mt-1">•</span>
+                                    <span><span className="text-white font-semibold">Optimized Conversion:</span> Data-backed proof of where to double down.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-[var(--brand)] font-bold mt-1">•</span>
+                                    <span><span className="text-white font-semibold">Strategic Agility:</span> The ability to pivot based on real-time signals, not gut feelings.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -114,15 +125,15 @@ export default function InsightSynthesis() {
             <section className="py-20 text-center">
                 <div className="inline-block p-[2px] rounded-[2rem] bg-gradient-to-r from-[var(--brand)] via-[var(--brand)] to-[var(--brand)] shadow-[0_0_60px_rgba(4,168,154,0.5)]">
                     <div className="rounded-[2rem] bg-black/90 backdrop-blur-xl px-12 py-10">
-                        <h3 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Ready to Get Started?</h3>
+                        <h3 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Stop navigating in the dark. Start seeing the signal.</h3>
                         <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-                            [Add your call-to-action description here]
+                            Transform data noise into strategic clarity.
                         </p>
                         <Link
                             href="/mozuk-form"
                             className="inline-flex items-center px-10 py-5 rounded-full bg-[var(--brand)] text-white text-xl font-bold shadow-[0_0_40px_rgba(4,168,154,0.4)] hover:shadow-[0_0_60px_rgba(4,168,154,0.6)] hover:scale-105 transition-all"
                         >
-                            Schedule Your Insight Synthesis
+                            Synthesize My Data
                             <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
