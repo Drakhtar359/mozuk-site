@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90svh] flex flex-col items-center justify-center text-center">
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] animate-fade-in-up">
-          Build. Pitch. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand)] to-cyan-400 drop-shadow-[0_0_30px_rgba(4,168,154,0.5)]">Ship.</span>
+          Build. Pitch. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand)] to-cyan-400 drop-shadow-[0_0_30px_rgba(4,168,154,0.5)]">Scale.</span>
         </h1>
         <p className="text-xl sm:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
           We partner with teams to craft standout pitch decks, sharpen product strategy,
