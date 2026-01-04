@@ -93,7 +93,7 @@ export default function Team() {
                         </h2>
                         <div className="space-y-6 text-lg text-white/80 leading-relaxed">
                             <p>
-                                [Add your mission statement or team values here]
+                                Our mission is to eliminate the noise that stalls growth. We bridge the gap between technical complexity and strategic narrative, ensuring that every product we touch has the clarity to lead, the data to prove it, and the structure to scale.
                             </p>
                         </div>
                     </div>
