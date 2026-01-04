@@ -14,11 +14,11 @@ export default function Team() {
                         <span className="text-sm font-medium text-white/80">Our Team</span>
                     </div>
 
-                    <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight whitespace-nowrap">
+                    <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight">
                         The Minds Behind the <span className="text-[var(--brand)] drop-shadow-[0_0_30px_rgba(4,168,154,0.5)]">Signal</span>
                     </h1>
 
-                    <p className="text-xl sm:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
                         MOZUK is a lean collective of specialists built to solve a single problem: the friction between a great idea and its execution. We combine high-level product strategy, rigorous technical architecture, and deep analytical intelligence to ensure your vision survives the transition from concept to market. We don't just advise; we institutionalize clarity.
                     </p>
                 </div>
