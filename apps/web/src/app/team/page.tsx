@@ -47,7 +47,7 @@ export default function Team() {
                         <h3 className="text-2xl font-bold mb-2 text-white text-center">Michel Akl</h3>
                         <p className="text-[var(--brand)] text-center mb-3 font-medium">Strategy</p>
                         <p className="text-white/70 leading-relaxed text-center">
-                            Strategy, Narrative, and Vision
+                            Architecting the Narrative: Aligning business logic and vision to secure market authority and investor conviction.
                         </p>
                     </div>
 
@@ -61,7 +61,7 @@ export default function Team() {
                         <h3 className="text-2xl font-bold mb-2 text-white text-center">Anthony Bechay</h3>
                         <p className="text-[var(--brand)] text-center mb-3 font-medium">Technical</p>
                         <p className="text-white/70 leading-relaxed text-center">
-                            Infrastructure, Systems, and The Precision Protocol
+                            Engineering the Protocol: Codifying technical complexity into scalable systems that ensure operational integrity.
                         </p>
                     </div>
 
@@ -75,7 +75,7 @@ export default function Team() {
                         <h3 className="text-2xl font-bold mb-2 text-white text-center">Radostina Bojinova</h3>
                         <p className="text-[var(--brand)] text-center mb-3 font-medium">Data</p>
                         <p className="text-white/70 leading-relaxed text-center">
-                            Analytics, Logic, and The Insight Synthesis
+                            Synthesizing the Truth: Transforming fragmented data into analytical frameworks that drive evidence-based decisions.
                         </p>
                     </div>
                 </div>
