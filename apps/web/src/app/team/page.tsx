@@ -31,7 +31,7 @@ export default function Team() {
                         The <span className="text-[var(--brand)]">People</span>
                     </h2>
                     <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                        [Add your section subtitle here]
+                        Specialized in the architecture of clarity
                     </p>
                 </div>
 
