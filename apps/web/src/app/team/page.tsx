@@ -45,7 +45,7 @@ export default function Team() {
                             </svg>
                         </div>
                         <h3 className="text-2xl font-bold mb-2 text-white text-center">Michel Akl</h3>
-                        <p className="text-[var(--brand)] text-center mb-3 font-medium">CEO</p>
+                        <p className="text-[var(--brand)] text-center mb-3 font-medium">Strategy</p>
                         <p className="text-white/70 leading-relaxed text-center">
                             Strategy, Narrative, and Vision
                         </p>
