@@ -2,9 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import Link from "next/link";
+
 type Service = {
   title: string;
   description: string;
+  href?: string;
 };
 
 type ServicesCarouselProps = {
@@ -70,7 +73,7 @@ export default function ServicesCarousel({ services, autoMs = 3000 }: ServicesCa
             <div key={pageIdx} className="w-full shrink-0 px-0 sm:px-1" style={{ width: `${100 / length}%` }}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {pair.map((svc, idx) => (
-                  <ServiceCard key={idx} title={svc.title} description={svc.description} />)
+                  <ServiceCard key={idx} title={svc.title} description={svc.description} href={svc.href} />)
                 )}
               </div>
             </div>
@@ -86,8 +89,8 @@ export default function ServicesCarousel({ services, autoMs = 3000 }: ServicesCa
               key={idx}
               onClick={() => goToPage(idx)}
               className={`transition-all duration-300 rounded-full ${idx === displayIndex
-                  ? 'w-8 h-2 bg-[var(--brand)] shadow-[0_0_10px_rgba(4,168,154,0.5)]'
-                  : 'w-2 h-2 bg-white/30 hover:bg-white/50'
+                ? 'w-8 h-2 bg-[var(--brand)] shadow-[0_0_10px_rgba(4,168,154,0.5)]'
+                : 'w-2 h-2 bg-white/30 hover:bg-white/50'
                 }`}
               aria-label={`Go to page ${idx + 1}`}
             />
@@ -106,8 +109,8 @@ function chunkIntoPages<T>(items: T[], size: number): T[][] {
   return chunks;
 }
 
-function ServiceCard({ title, description }: { title: string; description: string }) {
-  return (
+function ServiceCard({ title, description, href }: { title: string; description: string; href?: string }) {
+  const content = (
     <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)]">
       {/* Hover glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
@@ -118,4 +121,14 @@ function ServiceCard({ title, description }: { title: string; description: strin
       </div>
     </div>
   );
+
+  if (href) {
+    return (
+      <Link href={href} className="block hover:scale-[1.02] transition-transform duration-300">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }

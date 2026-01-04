@@ -43,10 +43,10 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Services</h2>
             <ServicesCarousel
               services={[
-                { title: "Pitch Decks", description: "Investor-ready narratives and crisp visuals." },
-                { title: "Product Strategy", description: "Clear roadmaps and sharp positioning." },
-                { title: "Data Analysis", description: "Insights that drive confident decisions." },
-                { title: "Product Documentation", description: "Docs that onboard and empower users." },
+                { title: "The Clarity Audit", description: "Investor-ready narratives and crisp visuals.", href: "/clarityaudit" },
+                { title: "The Capital Alignment", description: "Clear roadmaps and sharp positioning.", href: "/capitalalignment" },
+                { title: "The Technical Standard", description: "Insights that drive confident decisions.", href: "/technicalstandard" },
+                { title: "The Insight Synthesis", description: "Docs that onboard and empower users.", href: "/insightsynthesis" },
               ]}
               autoMs={5000}
             />
