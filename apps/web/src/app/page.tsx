@@ -47,6 +47,12 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
+                    {/* Icon */}
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-[var(--brand)]/10 border border-[var(--brand)]/30 flex items-center justify-center mx-auto">
+                      <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Clarity Audit</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We strip away the noise to find the core of your product story.</p>
                     <ul className="space-y-2 text-sm text-white/80">
@@ -78,6 +84,12 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
+                    {/* Icon */}
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-[var(--brand)]/10 border border-[var(--brand)]/30 flex items-center justify-center mx-auto">
+                      <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Capital Alignment</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We bridge the gap between your vision and investor logic.</p>
                     <ul className="space-y-2 text-sm text-white/80">
@@ -109,6 +121,12 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
+                    {/* Icon */}
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-[var(--brand)]/10 border border-[var(--brand)]/30 flex items-center justify-center mx-auto">
+                      <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                      </svg>
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Precision Protocol</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We build the blueprints that allow your product and team to scale.</p>
                     <ul className="space-y-2 text-sm text-white/80">
@@ -140,6 +158,12 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
+                    {/* Icon */}
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-gradient-to-br from-[var(--brand)]/20 to-[var(--brand)]/10 border border-[var(--brand)]/30 flex items-center justify-center mx-auto">
+                      <svg className="w-6 h-6 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Insight Synthesis</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We transform raw data into the evidence you need to move with confidence.</p>
                     <ul className="space-y-2 text-sm text-white/80">
