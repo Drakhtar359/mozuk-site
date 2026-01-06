@@ -38,7 +38,7 @@ export default function Home() {
         <div className="relative rounded-[2.5rem] overflow-hidden">
           {/* Content */}
           <div className="relative z-10 p-8 sm:p-12">
-            <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Services</h2>
+            <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-center">Services</h2>
 
             {/* 2x2 Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -47,7 +47,7 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
-                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Clarity Audit</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Clarity Audit</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We strip away the noise to find the core of your product story.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
@@ -72,7 +72,7 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
-                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Capital Alignment</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Capital Alignment</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We bridge the gap between your vision and investor logic.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
@@ -97,7 +97,7 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
-                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Precision Protocol</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Precision Protocol</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We build the blueprints that allow your product and team to scale.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
@@ -122,7 +122,7 @@ export default function Home() {
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10 flex-1 flex flex-col">
-                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Insight Synthesis</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2 text-center">The Insight Synthesis</h3>
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We transform raw data into the evidence you need to move with confidence.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
