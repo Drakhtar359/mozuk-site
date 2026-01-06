@@ -1,4 +1,3 @@
-import ServicesCarousel from "@/components/ServicesCarousel";
 import SatisfactionStat from "@/components/SatisfactionStat";
 import PerformanceLineStat from "@/components/PerformanceLineStat";
 import FundRaisedStat from "@/components/FundRaisedStat";
@@ -34,22 +33,115 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - Static */}
+      {/* Services Section - Grid */}
       <section id="services" className="mb-24">
         <div className="relative rounded-[2.5rem] overflow-hidden">
-
           {/* Content */}
           <div className="relative z-10 p-8 sm:p-12">
             <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Services</h2>
-            <ServicesCarousel
-              services={[
-                { title: "The Clarity Audit", description: "We strip away the noise to find the core of your product story.", href: "/clarityaudit" },
-                { title: "The Capital Alignment", description: "We bridge the gap between your vision and investor logic.", href: "/capitalalignment" },
-                { title: "The Precision Protocol", description: "We build the blueprints that allow your product and team to scale.", href: "/technicalstandard" },
-                { title: "The Insight Synthesis", description: "We transform raw data into the evidence you need to move with confidence.", href: "/insightsynthesis" },
-              ]}
-              autoMs={5000}
-            />
+
+            {/* 2x2 Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Service 1: The Clarity Audit */}
+              <Link href="/clarityaudit" className="block hover:scale-[1.02] transition-transform duration-300">
+                <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                  <div className="relative z-10 flex-1 flex flex-col">
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Clarity Audit</h3>
+                    <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We strip away the noise to find the core of your product story.</p>
+                    <ul className="space-y-2 text-sm text-white/80">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Narrative Stress-Test</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Strategic Fix Roadmap</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Refined Value Proposition</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Service 2: The Capital Alignment */}
+              <Link href="/capitalalignment" className="block hover:scale-[1.02] transition-transform duration-300">
+                <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                  <div className="relative z-10 flex-1 flex flex-col">
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Capital Alignment</h3>
+                    <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We bridge the gap between your vision and investor logic.</p>
+                    <ul className="space-y-2 text-sm text-white/80">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>High-Conviction Pitch Deck</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Defensible Valuation Model</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Investor-Ready Data Room</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Service 3: The Precision Protocol */}
+              <Link href="/technicalstandard" className="block hover:scale-[1.02] transition-transform duration-300">
+                <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                  <div className="relative z-10 flex-1 flex flex-col">
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Precision Protocol</h3>
+                    <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We build the blueprints that allow your product and team to scale.</p>
+                    <ul className="space-y-2 text-sm text-white/80">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Technical Product Blueprints</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Professional Product Datasheets</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Scalable Internal Documentation</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Service 4: The Insight Synthesis */}
+              <Link href="/insightsynthesis" className="block hover:scale-[1.02] transition-transform duration-300">
+                <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 hover:bg-white/[0.05] hover:border-[var(--brand)]/30 transition-all duration-300 shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-full flex flex-col">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                  <div className="relative z-10 flex-1 flex flex-col">
+                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--brand)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] mb-2">The Insight Synthesis</h3>
+                    <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We transform raw data into the evidence you need to move with confidence.</p>
+                    <ul className="space-y-2 text-sm text-white/80">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>High-Signal Performance Dashboards</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>User Behavior Mapping</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <span>Data-Driven Decision Frameworks</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
