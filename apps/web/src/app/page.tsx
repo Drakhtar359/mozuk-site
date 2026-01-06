@@ -51,15 +51,21 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We strip away the noise to find the core of your product story.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Narrative Stress-Test</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Strategic Fix Roadmap</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Refined Value Proposition</span>
                       </li>
                     </ul>
@@ -76,15 +82,21 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We bridge the gap between your vision and investor logic.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>High-Conviction Pitch Deck</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Defensible Valuation Model</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Investor-Ready Data Room</span>
                       </li>
                     </ul>
@@ -101,15 +113,21 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We build the blueprints that allow your product and team to scale.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Technical Product Blueprints</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Professional Product Datasheets</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Scalable Internal Documentation</span>
                       </li>
                     </ul>
@@ -126,15 +144,21 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] mb-4">We transform raw data into the evidence you need to move with confidence.</p>
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>High-Signal Performance Dashboards</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>User Behavior Mapping</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[var(--brand)] mt-1">•</span>
+                        <svg className="w-4 h-4 text-[var(--brand)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>Data-Driven Decision Frameworks</span>
                       </li>
                     </ul>
